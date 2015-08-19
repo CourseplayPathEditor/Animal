@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="21">
+    <title>
+        <de>AnimalMod  BETA</de>
+    </title>
+    <description>
+    <en>
+<![CDATA[Script: jengske_BE
+Dev version
+
+www.fs-uk.com]]>
+	</en>
+        <de>
+<![CDATA[Script: jengske_BE
+Dev version
+
+www.fs-uk.com]]>
+	</de>
+    </description>
+    <author>Jengske_BE</author>
+	<website>http://www.international-modding.be</website>
+    <version>0.5</version>
+    <iconFilename>img/store.dds</iconFilename>
+    <multiplayer supported="false"/>
+    <extraSourceFiles>
+        <sourceFile filename="lua/main.lua"/>
+    </extraSourceFiles>
+   
+
+</modDesc>
+
