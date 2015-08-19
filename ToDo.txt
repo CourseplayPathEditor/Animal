@@ -1,1 +1,8 @@
 here i go write my todo list
+19/08/2015
+main.lua
+- setup the needed variables
+- create basic functions
+- control true debugging
+- look what data we want to sync, save and load during gameplay
+- sync function, datainfo function
