@@ -51,6 +51,7 @@ gAm_a.defaultGender = "female"; -- animal genders: male, female
 gAm_a.genders = {[1] = "male", [2] = "female"};
 gAm_a.fileFound = false;
 
+
 -- Naming: used for random naming
 gAm_a.maleNames = { -- Animal male naming
 [1] = "WhiteTail",
@@ -127,7 +128,8 @@ a.curChickenWeight = 0; -- current weight
 a.curChickenPrice = 0; -- current price alive
 
 
--- table structures
+-- table structures ------------------------------------------
+-- pools
 a.cowPool = {}; -- cowPool
 a.sheepPool = {}; -- sheepPool
 a.chickenPool = {}; -- ChickenPool
@@ -137,6 +139,36 @@ a.breedPool = {}; -- holding animals that are breeding
 a.farm = {}; -- reference to script data
 a.game = {}; -- reference to player data
 
+-- Stats to be saved & synced // only sync with gAm_mn.farm or gAm_mn.game
+gAm_a.stats = {}; -- this table will hold all information, and will be used to save, draw, sync functions
+-- player & sesion info
+gAm_a.stats.money = 0; -- player money
+gAm_a.stats.currentDay = 0; -- the current day
+gAm_a.stats.currentTime = 0; -- the current time
+-- animals --
+gAm_a.stats.cowOwned = 0; -- anount of cows owned
+gAm_a.stats.sheepOwned = 0; -- anount of sheeps owned
+gAm_a.stats.chickenOwned = 0; -- anount of chickens owned
+-- breeding --
+gAm_a.stats.breedStats = {}; -- table to hold breeding information
+gAm_a.stats.breedStats.totalNumBreeds = 0; -- counter to count total number of animals you have breed
+gAm_a.stats.breedStats.cowInBreed = 0; -- amount of cows currently breeding
+gAm_a.stats.breedStats.sheepInBreed = 0; -- amount of sheep currently breeding
+gAm_a.stats.breedStats.chickenInBreed = 0; -- amount of chicken currently breeding
+-- feeding --
+gAm_a.stats.feeding = {}; -- table to hold feeding status
+gAm_a.stats.feeding.types = {}; -- hold the feeding info
+gAm_a.stats.feeding.types.grass = {};
+gAm_a.stats.feeding.types.grass.fillLevelCow = 0;
+gAm_a.stats.feeding.types.grass.fillLevelSheep = 0;
+gAm_a.stats.feeding.types.grass.fillLevelChicken = 0;
+gAm_a.stats.feeding.types.wheat = {};
+gAm_a.stats.feeding.types.wheat.fillLevelCow = 0;
+gAm_a.stats.feeding.types.wheat.fillLevelSheep = 0;
+gAm_a.stats.feeding.types.wheat.fillLevelChicken = 0;
+-- add more types ---
+
+-----------------------------------------------------------------
 -- local variables --------
 -- enable or disable breeding --
 local isCowBreed = false; -- enable or disable cow breeding, default is off
