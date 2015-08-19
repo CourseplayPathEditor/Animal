@@ -1,0 +1,63 @@
+animalMod general senario.
+
+the animalmod is a expansion for the farming simulator 2015.
+What we try to complete is as followed.
+
+Aging:
+build a system were the animals get a age, this could be a random age wen you buy a animal or a fixed age when you breed it your self.
+
+like all living souls, thy die. dead comes due to sickness, age, bad feeding,...
+
+Naming:
+all animals get a random name
+
+Health:
+all animals will have a health status, this means when you do not feed your animals it wil effect the breeding, sickness and dead senario.
+
+Breeding:
+when a animal is healthy and reaches the breeding age, it will be accepted in the breeding period.
+
+Pooling:
+We going to setup our animals in a pool. the pool will hold a maximum number of animals.this could be differind depending on the type of animal.
+The pool holds all information needed for the animalmod to run proper. 
+
+Animals:
+All animals must have the folowing variables included in the pool.
+poolTypes: cow, sheep, chicken, eggs
+
+for identifying:
+- id
+- name
+- type
+
+for aging & health:
+- age
+- breedAge
+- maxAge
+- weight
+- health
+- isSick
+- isAlive
+
+for breeding:
+- gender
+- isBreedReady
+- isBreeding
+- startBreeding
+- endBreeding
+
+extra:
+- certificate
+- isActive
+- forMeat
+- forWool
+- forMilk
+- forEggs
+
+Configuration:
+animalmod naming = gAm_(scriptName)
+table naming = gAm_Main.(structure)
+maxCowPool = 500
+maxChickenPool = 1500
+maxSheepPool = 1500
+
