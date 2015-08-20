@@ -1,11 +1,4 @@
--- script info
-print ("------------------------------ Setup ---------------------------------------------------------------------");
-print(gAm.scriptName ..string.format(gAm.version));	
-print("author: Jengske_BE");
-print("Fs version: FS2015");
-print("This livecycle script gives a aging System, health Sytem and breeding System")
-print ("---------------------------------------------------------------------------------------------------");
----------------------------------------------------------------------
+
 -- Script data
 -- this data could not be modified
 gAm.IsActive = true; -- enable/disable the script, default is enabled
@@ -156,11 +149,11 @@ end;
 -- debugging our script -------------------
 function gAm:debugging()
 	if (gAm.deBug == true) then
-		a = gAm_mn;
+		a = gAm;
 		if (a == nil) then
-		print ("gAm_mn does not exist");
+		print ("gAm does not exist");
 		else
-		print ("gAm_mn is ready");
+		print ("gAm is ready");
 			for k, v in pairs (gAm) do
 			print("gAm: ",k, " = ", v);
 			end;
@@ -176,9 +169,9 @@ function gAm:debugging()
 			
 			end;
 			print ("--------------pools-------------------");
-			print ("cow: ", string.format(#gAm_mn.cowPool));
-			print ("sheep: ", string.format(#gAm_mn.sheepPool));
-			print ("chicken: ", string.format(#gAm_mn.chickenPool));
+			print ("cow: ", string.format(#gAm.animals.cowPool));
+			print ("sheep: ", string.format(#gAm.animals.sheepPool));
+			print ("chicken: ", string.format(#gAm.animals.chickenPool));
 			print ("---------------------------------");
 		end;
 	end;
@@ -217,6 +210,7 @@ local pool = gAm.animals.curCowPool;
 	});
 	
 	end;
+	print ("setCowPool");
 end;
 
 function gAm:SetSheepPool()
@@ -249,6 +243,7 @@ local pool = gAm.animals.curSheepPool;
 	ancestry = ""
 	});
 	end;
+	print ("setSheepPool");
 end;
 
 function gAm:SetChickenPool()
@@ -281,6 +276,7 @@ local pool = gAm.animals.curChickenPool;
 	ancestry = ""
 	});
 	end;
+	print ("setChickenPool");
 end;
 
 function gAm:SetFarm()
@@ -297,7 +293,7 @@ pool.totalNumBreed = 0;
 end;
 
 function gAm:SetGame()
-local pool = gAm_mn.game;
+local pool = gAm.game;
 pool.cowOwned = 0;
 pool.sheepOwned = 0;
 pool.chickenOwned = 0;

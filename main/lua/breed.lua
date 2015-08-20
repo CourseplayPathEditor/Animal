@@ -23,7 +23,7 @@ function gAm._breed:updateTick(dt)
 end;
 
 function gAm._breed:update(dt)
-
+--print ("breed testing");
 end;
 
 function gAm._breed:draw()

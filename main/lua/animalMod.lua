@@ -10,6 +10,7 @@ gAm_mt = Class(gAm);
 InitObjectClass(gAm, "gAm");
 
 local modItem = ModsUtil.findModItemByModName(g_currentModName);
+
 -- directories --
 gAm.MissionDir = g_currentMission;
 gAm.LoadDir = g_currentModDirectory;
@@ -85,6 +86,14 @@ gAm.femaleNames = { -- Animal female naming
 ------
 gAm.count = 0;
 ---------------
+-- script info ---
+print ("------------------------------ AnimalMod ---------------------------------------------------------------------");
+print(gAm.scriptName .."_V" ..string.format(gAm.version));	
+print("author: Jengske_BE");
+print("Fs version: FS2015");
+print("This livecycle script gives a aging System, health Sytem and breeding System")
+print ("---------------------------------------------------------------------------------------------------");
+---------------------------------------------------------------------
 function gAm:getFilesCallback(filename, configname)
 	if (filename == gAm.scriptName ..".xml") then
 		gAm.xmlFound = true;
@@ -99,7 +108,8 @@ local filePath = gAm.path .. 'lua/manager.lua';
 assert(fileExists(filePath), ('ANIMALMOD ERROR: "manager.lua" can\'t be found at %q'):format(filePath));
 source(filePath);
 -------------------
-local function initialize()
+--local function initialize()
+function gAm:initialize()
 	local fileList = {
 		'createConfig',
 		'setup',
@@ -118,10 +128,11 @@ local function initialize()
 	print(('### AnimalMod: initialized %d/%d files (v%s)'):format(numFilesLoaded, numFiles, gAm.version));
 end;
 
-
+gAm:initialize();
 -----------------------------
 -- functions needed by game
 function gAm:loadMap(name)
+
 	print ("-- manager.lua: gAm output --");
 	print ("-----------------------------");
 	gAm.count = gAm.count + 1;
@@ -198,7 +209,7 @@ end;
 --------------------------------------------------
 print ("AnimalMod main structure set");
 addModEventListener(gAm);
-initialize();
+--initialize();
 ----------------------------------------------------------------------------------------------------------------------
 --******************************************************************************************************--------------
 ----------------------------------------------------------------------------------------------------------------------

@@ -97,4 +97,4 @@ CareerScreen.saveSelectedGame = function(self)
     gAm:createConfig();
 end; 
 
-print ("config loaded");
+print ("AnimalMod.createConfig loaded");
