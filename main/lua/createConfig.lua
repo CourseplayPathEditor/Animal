@@ -15,7 +15,7 @@
 	        txt2 = "DO NOT MODIFY";
 	       -- txt3 = "2";
 			-- configuration
-			--local a = gAm_mn;
+			local a = gAm.animals;
 			local tag = rootTag ..".Info1";
 			setXMLString(xmlFile, tag, txt1);
 			local tag = rootTag ..".Conf";
@@ -31,7 +31,7 @@
 			
 			local tag = rootTag ..".Conf.setCow";
 			-- cow
-			setXMLInt(xmlFile, tag ..".pool#minCowPool", gAm_mn.minCowPool); -- max cows you could own
+			setXMLInt(xmlFile, tag ..".pool#minCowPool", gAm.animals.minCowPool); -- max cows you could own
 			setXMLInt(xmlFile, tag ..".pool#medCowPool", a.medCowPool); -- max cows you could own
 			setXMLInt(xmlFile, tag ..".pool#maxCowPool", a.maxCowPool); -- max cows you could own
 			setXMLInt(xmlFile, tag ..".pool#curCowPool", a.curCowPool); -- set by config.xml
@@ -80,7 +80,7 @@
 			
 	    end;
 	        saveXMLFile(xmlFile);
-	        print(gAm_a.setConfFilename .." saved");
+	        print(gAm.setConfFilename .." saved");
 	        delete(xmlFile);
 	end;
 	
