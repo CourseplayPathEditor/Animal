@@ -176,13 +176,38 @@ local modItem = ModsUtil.findModItemByModName(g_currentModName);
 -- local animalTypes = am.gAm.mn.types;
 -- local defaultType = animalTypes[8];
 
+-- inspired by courseplay.lua
+-- place sub-classes here in order to get an overview of the contents, subclasses wil start like gAm."_class", "gAm._man"
+-------------------
+gAm._man = {};
+gAm._breed = {};
+
+-------------------
+local function initialize()
+	local fileList = {
+		'createConfig', 
+		'setup'
+	};
+
+	local numFiles, numFilesLoaded = #(fileList) + 3, 3; -- + 3 as 'register.lua', 'courseplay.lua' and 'CpManager.lua' have already been loaded
+	for _,file in ipairs(fileList) do
+		local filePath = gAm.LUAdir .. file .. '.lua';
+
+		assert(fileExists(filePath), '\tANIMALMOD ERROR: could not load file ' .. filePath);
+		source(filePath);
+		print('\t### AnimalMod: ' .. filePath .. ' has been loaded');
+		numFilesLoaded = numFilesLoaded + 1;
+	end;
+
+	print(('### AnimalMod: initialized %d/%d files (v%s)'):format(numFilesLoaded, numFiles, gAm.version));
+end;
 
 -- own functions----
 function gAm._man:check1()
 -- first step to check for changes on the amount of animals
 
 end;
-
+initialize();
 ----------------------------
 -- functions needed by game
 function gAm._man:loadMap(name)
