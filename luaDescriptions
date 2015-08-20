@@ -1,0 +1,3 @@
+Here we define and explain the lua files created.
+main.lua:
+- this file is used to setup the main structure and handle the loading and saving
