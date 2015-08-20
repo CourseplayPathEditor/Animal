@@ -50,6 +50,9 @@ gAm.animalTypes = {[1] = "cow", [2] = "sheep", [3] = "chicken"};
 gAm.animalFillTypes = {[1] = "cow", [2] = "sheep", [3] = "chicken"}; -- not in use now but setup for expansion to trailer and trigger classes.
 gAm.animalStates = {[1] = "idle", [2] = "breeding", [3] = "sick", [4] = "dead"}; -- animal states
 gAm.animals = {}; -- main animal table
+gAm.totalNumCows = 0;
+gAm.totalNumSheep = 0;
+gAm.totalNumChicken = 0;
 -- references for syncing 
 gAm.farm = {}; -- reference to script data
 gAm.game = {}; -- reference to player data
@@ -108,11 +111,15 @@ local filePath = gAm.path .. 'lua/manager.lua';
 assert(fileExists(filePath), ('ANIMALMOD ERROR: "manager.lua" can\'t be found at %q'):format(filePath));
 source(filePath);
 -------------------
---local function initialize()
-function gAm:initialize()
+local function initialize()
+--function gAm:initialize()
 	local fileList = {
 		'createConfig',
 		'setup',
+		'datasync',
+		'loadData',
+		'saveData',
+		'debugging',
 		'breed'
 	};
 
@@ -128,7 +135,7 @@ function gAm:initialize()
 	print(('### AnimalMod: initialized %d/%d files (v%s)'):format(numFilesLoaded, numFiles, gAm.version));
 end;
 
-gAm:initialize();
+initialize();
 -----------------------------
 -- functions needed by game
 function gAm:loadMap(name)
@@ -209,7 +216,7 @@ end;
 --------------------------------------------------
 print ("AnimalMod main structure set");
 addModEventListener(gAm);
---initialize();
+
 ----------------------------------------------------------------------------------------------------------------------
 --******************************************************************************************************--------------
 ----------------------------------------------------------------------------------------------------------------------

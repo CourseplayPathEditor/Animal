@@ -25,7 +25,9 @@ function gAm._man:loadMap(name)
 print("manager.lua:loadMap(name)");
 	gAm:createConfig();
 	gAm:setup();
-	gAm:debugging();
+	gAm:syncFarm();
+	gAm:syncGame();
+	--gAm:debugging();
 end;
 
 function gAm._man:mouseEvent(posX, posY, isDown, isUp, button)
@@ -40,6 +42,9 @@ end;
 
 function gAm._man:update(dt)
 
+if(gAm.totalNumCows < g_currentMission.husbandries.cow.totalNumAnimals) then
+print ("we have a change in cows");
+end;
 end;
 
 function gAm._man:draw()

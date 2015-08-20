@@ -68,6 +68,8 @@ a.cowPool = {}; -- cowPool
 a.sheepPool = {}; -- sheepPool
 a.chickenPool = {}; -- ChickenPool
 a.breedPool = {}; -- holding animals that are breeding
+a.eggPool = {}; -- holding the eggs
+a.sickPool = {}; -- holding the sick animals
 
 -- references for syncing 
 gAm.farm = {}; -- reference to script data
