@@ -187,8 +187,8 @@ end;
 --------------------------------------------
 -- these functions run only once at startup ---
 function gAm:SetCowPool()
-local a = gAm_mn.cowPool;
-local pool = gAm_mn.curCowPool;
+local a = gAm.animals.cowPool;
+local pool = gAm.animals.curCowPool;
 	for i = 1, pool do
 	-- insert the amount of cows
 	table.insert( a, i, {
@@ -220,8 +220,8 @@ local pool = gAm_mn.curCowPool;
 end;
 
 function gAm:SetSheepPool()
-local a = gAm_mn.sheepPool;
-local pool = gAm_mn.curSheepPool;
+local a = gAm.animals.sheepPool;
+local pool = gAm.animals.curSheepPool;
 	for i = 1, pool do
 	-- insert the amount of sheeps
 	table.insert( a, i, {
@@ -252,8 +252,8 @@ local pool = gAm_mn.curSheepPool;
 end;
 
 function gAm:SetChickenPool()
-local a = gAm_mn.chickenPool;
-local pool = gAm_mn.curChickenPool;
+local a = gAm.animals.chickenPool;
+local pool = gAm.animals.curChickenPool;
 	for i = 1, pool do
 	-- insert the amount of chicken
 	table.insert( a, i, {
@@ -284,7 +284,7 @@ local pool = gAm_mn.curChickenPool;
 end;
 
 function gAm:SetFarm()
-local pool = gAm_mn.farm;
+local pool = gAm.farm;
 
 pool.cowOwned = 0;
 pool.sheepOwned = 0;
@@ -298,6 +298,10 @@ end;
 
 function gAm:SetGame()
 local pool = gAm_mn.game;
+pool.cowOwned = 0;
+pool.sheepOwned = 0;
+pool.chickenOwned = 0;
+pool.eggOwned = 0;
 end;
 
 function gAm:setName(gender)
@@ -311,10 +315,10 @@ function gAm:setName(gender)
 end;
 
 function gAm:setup()
-	gAm_a:SetCowPool();
-	gAm_a:SetSheepPool();
-	gAm_a:SetChickenPool();
+	gAm:SetCowPool();
+	gAm:SetSheepPool();
+	gAm:SetChickenPool();
 	gAm:SetFarm();
 	gAm:SetGame();
-	--gAm_a:createConfig();
+	
 end;

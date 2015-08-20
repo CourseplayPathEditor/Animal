@@ -95,6 +95,31 @@ function gAm:getFilesCallback(filename, configname)
 	end;
 end;
 ----------------------------
+local filePath = gAm.path .. 'lua/manager.lua';
+assert(fileExists(filePath), ('ANIMALMOD ERROR: "manager.lua" can\'t be found at %q'):format(filePath));
+source(filePath);
+-------------------
+local function initialize()
+	local fileList = {
+		'createConfig',
+		'setup',
+		'breed'
+	};
+
+	local numFiles, numFilesLoaded = #(fileList) + 2, 2; -- + 2 as 'animalMod.lua' and 'manager.lua' have already been loaded
+	for _,file in ipairs(fileList) do
+		local filePath = gAm.LUAdir .. file .. '.lua';
+		assert(fileExists(filePath), '\tANIMALMOD ERROR: could not load file ' .. filePath);
+		source(filePath);
+		print('\t### AnimalMod: ' .. filePath .. ' has been loaded');
+		numFilesLoaded = numFilesLoaded + 1;
+	end;
+
+	print(('### AnimalMod: initialized %d/%d files (v%s)'):format(numFilesLoaded, numFiles, gAm.version));
+end;
+
+
+-----------------------------
 -- functions needed by game
 function gAm:loadMap(name)
 	print ("-- manager.lua: gAm output --");
@@ -169,9 +194,11 @@ function gAm:deleteMap(name)
 
 end;
 
+
 --------------------------------------------------
 print ("AnimalMod main structure set");
 addModEventListener(gAm);
+initialize();
 ----------------------------------------------------------------------------------------------------------------------
 --******************************************************************************************************--------------
 ----------------------------------------------------------------------------------------------------------------------

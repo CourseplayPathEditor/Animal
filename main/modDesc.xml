@@ -23,7 +23,7 @@ www.fs-uk.com]]>
     <iconFilename>img/store.dds</iconFilename>
     <multiplayer supported="false"/>
     <extraSourceFiles>
-        <sourceFile filename="lua/manager.lua"/>
+        <sourceFile filename="lua/animalMod.lua"/>
     </extraSourceFiles>
    
 
