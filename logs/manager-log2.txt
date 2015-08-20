@@ -1,0 +1,111 @@
+GIANTS Engine Runtime 6.0.2 64bit (Build Date: Dec  8 2014)
+Copyright (c) 2008-2014, GIANTS Software GmbH (giants-software.com), All Rights Reserved.
+Copyright (c) 2003-2014, Christian Ammann and Stefan Geiger, All Rights Reserved.
+Application: FarmingSimulator2015
+Main System
+  CPU: AMD FX(tm)-8320 Eight-Core Processor           
+  Memory: 16283 MB
+  OS: Windows NT 6.1 64-bit
+Physics System
+  Version: 5.9.4
+  Thread(s): 2
+Input System
+  Keyboard enabled
+  Mouse enabled
+  Gamepad/Joystick enabled
+  Force Feedback disabled
+Sound System
+  Driver: OpenAL
+  Version: 1.1
+  Device:  Generic Software
+  Max. sources: 256
+Render System
+  Driver: OpenGL
+  Card Vendor: ATI Technologies Inc.
+  Renderer: AMD Radeon R7 200 Series
+  Version: 3.2.13084 Compatibility Profile Context 14.301.1001.0
+  Shader Version: 4.40
+    GL_NV_texture_compression_vtc not supported
+    max_texture_layers: 16
+    OpenGL initialization successful
+Hardware Profile
+  Level: Medium (auto)
+  View Distance Factor: 1.000000
+  Shadow Quality: 1.000000
+  Skip Mipmaps: 1
+  LOD Distance Factor: 1.000000
+  Terrain LOD Distance Factor: 1.000000
+  Foliage View Distance Factor: 1.000000
+  Volume Mesh Tessellation Factor: 1.000000
+  Tyre Tracks Segments Factor: 1.000000
+Farming Simulator 15
+  Version: 1.2.0.0 1.2 RC6
+  Available Languages: en fr es it nl pt
+  Language: nl
+Game vehicle types loaded
+Mod directory: C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods/
+Load mod: AnimalMod
+Error: Invalid mod name 'Nieuwe map'! Characters allowed: (_, A-Z, a-z, 0-9). The first character must not be a digit
+------------------------------ AnimalMod ---------------------------------------------------------------------
+AnimalMod_Dev_V0.5
+author: Jengske_BE
+Fs version: FS2015
+This livecycle script gives a aging System, health Sytem and breeding System
+---------------------------------------------------------------------------------------------------
+AnimalMod.Manager loaded
+AnimalMod.createConfig loaded
+	### AnimalMod: C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//AnimalMod/lua/createConfig.lua has been loaded
+	### AnimalMod: C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//AnimalMod/lua/setup.lua has been loaded
+	### AnimalMod: C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//AnimalMod/lua/datasync.lua has been loaded
+	### AnimalMod: C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//AnimalMod/lua/loadData.lua has been loaded
+	### AnimalMod: C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//AnimalMod/lua/saveData.lua has been loaded
+	### AnimalMod: C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//AnimalMod/lua/debugging.lua has been loaded
+AnimalMod.Breed loaded
+	### AnimalMod: C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//AnimalMod/lua/breed.lua has been loaded
+### AnimalMod: initialized 9/9 files (v0.5)
+AnimalMod main structure set
+Warning: Character '9' not found in texture font (  Language: nl
+Game vehicle types loaded
+Mod directory: C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods/
+Load mod: AnimalMod
+Error: Invalid mod name 'Nieuwe map'! Characters allowed: (_, A-Z, a-z, 0-9). The first character must not be a digit
+------------------------------ AnimalMod ---------------------------------------------------------------------
+AnimalMod_Dev_V0.5
+author: Jengske_BE
+Fs version: FS2015
+This livecycle script gives a aging System, health Sytem and breeding System
+---------------------------------------------------------------------------------------------------
+AnimalMod.Manager loaded
+AnimalMod.createConfig loaded
+).
+data/sky/sky_day_night.i3d (8.41 ms)
+data/sky/rain.i3d (1.54 ms)
+data/sky/hail.i3d (1.02 ms)
+data/sky/dust.i3d (1.05 ms)
+data/maps/map02.i3d (7461.46 ms)
+manager.lua:loadMap(name)
+saving configFile
+C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/savegame1/AnimalMod_Dev_conf.xml saved
+setCowPool
+setSheepPool
+setChickenPool
+syncFarm
+syncGame
+data/vehicles/steerable/deutz/deutzAgroStar661.i3d (45.91 ms)
+dataS2/character/player/player.i3d (424.77 ms)
+data/vehicles/steerable/huerlimann/huerlimannH488.i3d (38.28 ms)
+data/vehicles/steerable/sampoRosenlew/sampoRosenlewC6.i3d (51.71 ms)
+data/vehicles/steerable/buehrer/buehrer6135A.i3d (19.40 ms)
+data/vehicles/tools/koeckerling/koeckerlingTrio300M.i3d (19.33 ms)
+data/vehicles/particleAnimations/koeckerling/koeckerlingTrio300M.i3d (5.57 ms)
+data/vehicles/tools/poettinger/poettingerVitasem302A.i3d (24.05 ms)
+data/vehicles/particleAnimations/poettinger/poettingerVitasem302A.i3d (1.66 ms)
+data/vehicles/trailers/brantner/brantnerE8041.i3d (10.44 ms)
+data/vehicles/cutters/sampoRosenlew/sampoRosenlewC6.i3d (17.43 ms)
+data/vehicles/tools/suer/suerSB700.i3d (4.92 ms)
+dataS/character/player/playerCCT.i3d (13.09 ms)
+we have a change in cows
+syncFarm
+syncGame
+saving data
+AnimalMod_Dev.xml saved

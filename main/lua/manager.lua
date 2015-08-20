@@ -42,9 +42,13 @@ end;
 
 function gAm._man:update(dt)
 
-if(gAm.totalNumCows < g_currentMission.husbandries.cow.totalNumAnimals) then
-print ("we have a change in cows");
-end;
+	if(gAm.totalNumCows < g_currentMission.husbandries.cow.totalNumAnimals) then
+		print ("we have a change in cows");
+		gAm.totalNumCows = g_currentMission.husbandries.cow.totalNumAnimals;
+		gAm:syncFarm();
+		gAm:syncGame();
+		gAm:saveData();
+	end;
 end;
 
 function gAm._man:draw()

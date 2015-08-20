@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<AnimalMod_Dev>
+    <Author>jengske_BE</Author>
+    <Date>18/08/2015</Date>
+    <Copyright>jengske_BE</Copyright>
+    <Info1>modify this section to suit your needs.</Info1>
+    <Conf>
+        <section1 scriptActive="true" deBug="true" defaultMode="production" />
+        <section2>
+            <pool maxCowPool="500" />
+            <age maxCowAge="5" cowBreedAge="3" />
+            <breed maxCowBreedTime="1" cbPeriod="60000" cbPeriodTime="5" />
+            <weight maxCowWeight="500" minCowWeight="15" />
+        </section2>
+        <section3>
+            <pool maxSheepPool="500" />
+            <age maxSheepAge="5" sheepBreedAge="3" />
+            <breed maxSheepBreedTime="1" sbPeriod="60000" sbPeriodTime="5" />
+            <weight maxSheepWeight="100" minSheepWeight="15" />
+        </section3>
+        <section4>
+            <pool maxChickenPool="1500" />
+            <age maxChickenAge="5" chickenBreedAge="3" />
+            <breed maxChickenBreedTime="1" chbPeriod="60000" chbPeriodTime="5" />
+            <weight maxChickenWeight="4" minChickenWeight="1" />
+        </section4>
+    </Conf>
+    <Info2>DO NOT MODIFY</Info2>
+    <PlayerStats money="0" />
+    <Breeding totalNumBreeds="0" cowInBreed="0" sheepInBreed="0" chickenInBreed="0" />
+</AnimalMod_Dev>
