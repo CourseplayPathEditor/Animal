@@ -98,7 +98,7 @@ a.curCowWeight = 0; -- current weight
 a.curCowPrice = 0; -- current price alive
 
 -- sheep
-a.minSheepPool = 100; -- max cows you could own
+a.minSheepPool = 50; -- max cows you could own
 a.medSheepPool = 250; -- max cows you could own
 a.maxSheepPool = 500; -- max cows you could own
 a.curSheepPool = 250; -- set by config.xml
@@ -107,23 +107,23 @@ a.sheepBreedAge = 3; -- age before it could breed
 a.maxSheepBreedTime = 1; -- time we need to grow before it get born
 a.sbPeriod = 60000; -- multiplier for breeding (time)
 a.sbPeriodTime = 5; -- time in day's that the breeding period lest  
-a.maxSheepWeight = 500; -- max weight of healthy animal
+a.maxSheepWeight = 100; -- max weight of healthy animal
 a.minSheepWeight = 15; -- min weight 
 a.curSheepWeight = 0; -- current weight
 a.curSheepPrice = 0; -- current price alive
 
 -- chicken
-a.minChickenPool = 100; -- max cows you could own
-a.medChickenPool = 250; -- max cows you could own
-a.maxChickenPool = 500; -- max cows you could own
-a.curChickenPool = 250; -- set by config.xml
+a.minChickenPool = 10; -- max cows you could own
+a.medChickenPool = 750; -- max cows you could own
+a.maxChickenPool = 1500; -- max cows you could own
+a.curChickenPool = 10; -- set by config.xml
 a.maxChickenAge = 5; -- max age
 a.chickenBreedAge = 3; -- age before it could breed
 a.maxChickenBreedTime = 1; -- time we need to grow before it get born
 a.chbPeriod = 60000; -- multiplier for breeding (time)
 a.chbPeriodTime = 5; -- time in day's that the breeding period lest  
-a.maxChickenWeight = 500; -- max weight of healthy animal
-a.minChickenWeight = 15; -- min weight 
+a.maxChickenWeight = 4; -- max weight of healthy animal
+a.minChickenWeight = 1; -- min weight 
 a.curChickenWeight = 0; -- current weight
 a.curChickenPrice = 0; -- current price alive
 
@@ -364,27 +364,106 @@ function gAm_a:getFilesCallback(filename)
 	end;
     
 end;
-
+-- gives no error but crashes, checking
 function gAm_a:saveData()
 print("saving data");
-local rootTag = "test";
-local xmlFile = createXMLFile(rootTag, gAm_a.savegameFilename, rootTag);
+local rootTag = gAm_a.scriptName;
+local xmlFile = createXMLFile("animalMod", gAm_a.savegameFilename, rootTag);
 
 	if (xmlFile ~= nil) then
-	
-        setXMLString( xmlFile, rootTag, gAm_a.scriptName);
-		setXMLString( xmlFile, rootTag, gAm_a.scriptName .."#author", "Jengske_BE");
+		-- info --
+        setXMLString(xmlFile, rootTag ..".Author", "jengske_BE");
+		setXMLString(xmlFile, rootTag ..".Date", "18/08/2015");
+		setXMLString(xmlFile, rootTag ..".Copyright", "jengske_BE");
         --
-		--local am = gAm_mn;
-        txt1 = "--AnimalMod SaveGameFile, created when saving your session--";
-        txt2 = "--Use the AnimalMod.xml from inside the mod.zip to change settings.--";
-        txt3 = "--In this section you change the value used during your gamplay--";
-        local tag = "Info";
-        setXMLString(xmlFile, tag, txt1);
-        local tag = "modInfo";
-        setXMLString(xmlFile, tag.."#test2", txt2);
-       
-        --
+		-- user messages // need to be modified or deleted
+        txt1 = "modify this section to suit your needs.";
+        txt2 = "DO NOT MODIFY";
+       -- txt3 = "2";
+		-- configuration
+		--local a = gAm_mn;
+		local tag = rootTag ..".Info1";
+		setXMLString(xmlFile, tag, txt1);
+		local tag = rootTag ..".Conf";
+		local tag = rootTag ..".Conf.section1";
+		setXMLBool(xmlFile, tag .."#scriptActive", gAm_a.IsActive);
+		setXMLBool(xmlFile, tag .."#deBug", gAm_a.deBug);
+		setXMLString(xmlFile, tag .."#defaultMode", gAm_a.defaultMode);
+		--
+		
+		local tag = rootTag ..".Conf.section2";
+		-- cow
+		setXMLInt(xmlFile, tag .."#minCowPool", gAm_mn.minCowPool); -- max cows you could own
+		setXMLInt(xmlFile, tag .."#medCowPool", a.medCowPool); -- max cows you could own
+		setXMLInt(xmlFile, tag .."#maxCowPool", a.maxCowPool); -- max cows you could own
+		setXMLInt(xmlFile, tag .."#curCowPool", a.curCowPool); -- set by config.xml
+		setXMLInt(xmlFile, tag .."#maxCowAge", a.maxCowAge); -- max age
+		setXMLInt(xmlFile, tag .."#cowBreedAge", a.cowBreedAge); -- age before it could breed
+		setXMLInt(xmlFile, tag .."#maxCowBreedTime", a.maxCowBreedTime); -- time we need to grow before it get born
+		setXMLInt(xmlFile, tag .."#cbPeriod", a.cbPeriod ); -- multiplier for breeding (time)
+		setXMLInt(xmlFile, tag .."#cbPeriodTime", a.cbPeriodTime); -- time in day's that the breeding period lest  
+		setXMLInt(xmlFile, tag .."#maxCowWeight", a.maxCowWeight); -- max weight of healthy animal
+		setXMLInt(xmlFile, tag .."#minCowWeight", a.minCowWeight); -- min weight 
+		setXMLInt(xmlFile, tag .."#curCowWeight", a.curCowWeight); -- current weight
+		setXMLInt(xmlFile, tag .."#curCowPrice", a.curCowPrice); -- current price alive
+		--
+		local tag = rootTag ..".Conf.section3";
+		-- sheep
+		setXMLInt(xmlFile, tag .."#minSheepPool", gAm_mn.minSheepPool); -- max cows you could own
+		setXMLInt(xmlFile, tag .."#medSheepPool", a.medSheepPool); -- max cows you could own
+		setXMLInt(xmlFile, tag .."#maxSheepPool", a.maxSheepPool); -- max cows you could own
+		setXMLInt(xmlFile, tag .."#curSheepPool", a.curSheepPool); -- set by config.xml
+		setXMLInt(xmlFile, tag .."#maxSheepAge", a.maxSheepAge); -- max age
+		setXMLInt(xmlFile, tag .."#sheepBreedAge", a.sheepBreedAge); -- age before it could breed
+		setXMLInt(xmlFile, tag .."#maxSheepBreedTime", a.maxSheepBreedTime); -- time we need to grow before it get born
+		setXMLInt(xmlFile, tag .."#sbPeriod", a.sbPeriod ); -- multiplier for breeding (time)
+		setXMLInt(xmlFile, tag .."#sbPeriodTime", a.sbPeriodTime); -- time in day's that the breeding period lest  
+		setXMLInt(xmlFile, tag .."#maxSheepWeight", a.maxSheepWeight); -- max weight of healthy animal
+		setXMLInt(xmlFile, tag .."#minSheepWeight", a.minSheepWeight); -- min weight 
+		setXMLInt(xmlFile, tag .."#curSheepWeight", a.curSheepWeight); -- current weight
+		setXMLInt(xmlFile, tag .."#curSheepPrice", a.curSheepPrice); -- current price alive
+		--
+		local tag = rootTag ..".Conf.section4";
+		-- chicken
+		setXMLInt(xmlFile, tag .."#minChickenPool", gAm_mn.minChickenPool); -- max cows you could own
+		setXMLInt(xmlFile, tag .."#medChickenPool", a.medChickenpPool); -- max cows you could own
+		setXMLInt(xmlFile, tag .."#maxChickenPool", a.maxChickenPool); -- max cows you could own
+		setXMLInt(xmlFile, tag .."#curChickenPool", a.curChickenPool); -- set by config.xml
+		setXMLInt(xmlFile, tag .."#maxChickenAge", a.maxChickenAge); -- max age
+		setXMLInt(xmlFile, tag .."#chickenBreedAge", a.chickenBreedAge); -- age before it could breed
+		setXMLInt(xmlFile, tag .."#maxChickenBreedTime", a.maxChickenBreedTime); -- time we need to grow before it get born
+		setXMLInt(xmlFile, tag .."#chbPeriod", a.chbPeriod ); -- multiplier for breeding (time)
+		setXMLInt(xmlFile, tag .."#chbPeriodTime", a.chbPeriodTime); -- time in day's that the breeding period lest  
+		setXMLInt(xmlFile, tag .."#maxChickenWeight", a.maxChickenWeight); -- max weight of healthy animal
+		setXMLInt(xmlFile, tag .."#minChickenWeight", a.minChickenWeight); -- min weight 
+		setXMLInt(xmlFile, tag .."#curChickenWeight", a.curChickenWeight); -- current weight
+		setXMLInt(xmlFile, tag .."#curChickenPrice", a.curChickenPrice); -- current price alive
+		--
+		local tag = rootTag ..".Info2";
+		setXMLString(xmlFile, tag, txt2);
+		
+		-- player stats
+       local tag = rootTag ..".PlayerStats";
+		
+        -- todo
+		--setXMLString(xmlFile, tag .."#modifyMe", txt1);
+		-- breedingStats --
+       local tag = rootTag ..".Breeding";
+       -- todo
+	   setXMLInt( xmlFile, tag .."#totalNumBreeds", gAm_a.stats.breedStats.totalNumBreeds);
+	   setXMLInt( xmlFile, tag .."#cowInBreed", gAm_a.stats.breedStats.cowInBreed);
+	   setXMLInt( xmlFile, tag .."#sheepInBreed", gAm_a.stats.breedStats.sheepInBreed);
+	   setXMLInt( xmlFile, tag .."#chickenInBreed", gAm_a.stats.breedStats.chickenInBreed);
+       local tag = rootTag ..".Breeding.cow";
+	   -- todo: read the breedtable for cows
+	   
+	   
+	   local tag = rootTag ..".Breeding.sheep";
+	   -- todo: read the breedtable for sheep
+	  
+	   local tag = rootTag ..".Breeding.chicken";
+        -- todo: read the breedtable for chicken
+		
     end;
         saveXMLFile(xmlFile);
         print(gAm_a.scriptName ..".xml saved");

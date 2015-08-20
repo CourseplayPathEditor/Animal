@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<economy>
+    <vehicleShopSales>
+      <vehicleShopSale xmlFilename="data/vehicles/trailers/horsch/horschTitan34UW.xml" discount="10" saleStartDay="4" saleStartHour="14" saleDuration="48" isRunning="false" />
+      <vehicleShopSale xmlFilename="data/vehicles/trailers/fliegl/flieglSemitrailer.xml" discount="10" saleStartDay="4" saleStartHour="10" saleDuration="30" isRunning="false" />
+      <vehicleShopSale xmlFilename="data/vehicles/trailers/waterTrailer/waterTrailer.xml" discount="5" saleStartDay="3" saleStartHour="9" saleDuration="48" isRunning="false" />
+      <vehicleShopSale xmlFilename="data/vehicles/cutters/newHolland/newHollandHeader980CF6.xml" discount="20" saleStartDay="5" saleStartHour="14" saleDuration="24" isRunning="false" />
+    </vehicleShopSales>
+
+    <brandSale xmlFilename="data/vehicles/steerable/liebherr/liebherrL538.xml" discount="10" saleStartDay="6" saleStartHour="13" saleDuration="12" isRunning="false" />
+
+    <fieldOwnage>
+      <field number="1" ownedByPlayer="false" />
+      <field number="2" ownedByPlayer="false" />
+      <field number="3" ownedByPlayer="false" />
+      <field number="4" ownedByPlayer="false" />
+      <field number="5" ownedByPlayer="false" />
+      <field number="6" ownedByPlayer="false" />
+      <field number="7" ownedByPlayer="false" />
+      <field number="8" ownedByPlayer="false" />
+      <field number="9" ownedByPlayer="false" />
+      <field number="10" ownedByPlayer="false" />
+      <field number="11" ownedByPlayer="false" />
+      <field number="12" ownedByPlayer="false" />
+      <field number="13" ownedByPlayer="false" />
+      <field number="14" ownedByPlayer="false" />
+      <field number="15" ownedByPlayer="false" />
+      <field number="16" ownedByPlayer="true" />
+      <field number="17" ownedByPlayer="false" />
+      <field number="18" ownedByPlayer="false" />
+      <field number="19" ownedByPlayer="false" />
+      <field number="20" ownedByPlayer="false" />
+      <field number="21" ownedByPlayer="false" />
+    </fieldOwnage>
+
+    <greatDemands>
+      <greatDemand stationName="StationFlourMill" fillTypeName="rape" demandMultiplier="1.5" demandStartDay="6" demandStartHour="8" demandDuration="6" isRunning="false" isValid="true" />
+      <greatDemand stationName="StationBiomassHeatingPlant" fillTypeName="woodChips" demandMultiplier="1.9" demandStartDay="3" demandStartHour="7" demandDuration="18" isRunning="false" isValid="true" />
+      <greatDemand stationName="StationRestaurant" fillTypeName="maize" demandMultiplier="1.9" demandStartDay="5" demandStartHour="18" demandDuration="18" isRunning="false" isValid="true" />
+    </greatDemands>
+
+    <financeStatsHistory>
+        <financeStats day="0" newVehiclesCost="0" newAnimalsCost="0" constructionCost="0" vehicleRunningCost="0" propertyMaintenance="0" wagePayment="0" harvestIncome="0" missionIncome="0" other="0" loanInterest="0" />
+    </financeStatsHistory>
+
+</economy>
+
