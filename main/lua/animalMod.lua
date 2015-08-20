@@ -133,20 +133,20 @@ gAm:initialize();
 -- functions needed by game
 function gAm:loadMap(name)
 
-	print ("-- manager.lua: gAm output --");
-	print ("-----------------------------");
-	gAm.count = gAm.count + 1;
-	for k, v in pairs (gAm) do
+	-- print ("-- manager.lua: gAm output --");
+	-- print ("-----------------------------");
+	-- gAm.count = gAm.count + 1;
+	-- for k, v in pairs (gAm) do
 		
-		if (type(v) == "string") then
-		print("output: " ..k .." = " ..string.format(v));
-		elseif(type(v) == "table") then
-		print("output: " ..k .." = " ..type(v));
-		end;
+		-- if (type(v) == "string") then
+		-- print("output: " ..k .." = " ..string.format(v));
+		-- elseif(type(v) == "table") then
+		-- print("output: " ..k .." = " ..type(v));
+		-- end;
 		
 		
-	end;
-	print ("-------------" ..gAm.count .."----------------");
+	-- end;
+	-- print ("-------------" ..gAm.count .."----------------");
 	-- checking for config --
 	-- if() then
 	-- if the configfile is missing stop the script from starting up
@@ -166,35 +166,35 @@ function gAm:updateTick(dt)
 end;
 
 function gAm:update(dt)
-	if (gAm.count == 1) then
-		print ("-- manager.lua: gAm output --");
-		print ("-----------------------------");
-		gAm.count = gAm.count + 1;
-			for k, v in pairs (gAm) do
+	-- if (gAm.count == 1) then
+		-- print ("-- manager.lua: gAm output --");
+		-- print ("-----------------------------");
+		-- gAm.count = gAm.count + 1;
+			-- for k, v in pairs (gAm) do
 				
-				if (type(v) == "string") then
-				print("output: " ..k .." = " ..string.format(v));
-				elseif(type(v) == "table") then
-					for kk, vv in pairs(v)do
-						if (type(vv) == "string") then
-						print("output: " ..k ..": " ..kk .." = " ..vv);
-						elseif(type(vv) == "table") then
-							for kk2, vvv in pairs(vv)do
-								if (type(vvv) == "string") then
-								print("output: " ..k ..": " ..kk ..kk2 .." = " ..vvv);
-								else
-								print (type(vvv));
-								end;
-							end;
-						end;
-					end;
-				end;
+				-- if (type(v) == "string") then
+				-- print("output: " ..k .." = " ..string.format(v));
+				-- elseif(type(v) == "table") then
+					-- for kk, vv in pairs(v)do
+						-- if (type(vv) == "string") then
+						-- print("output: " ..k ..": " ..kk .." = " ..vv);
+						-- elseif(type(vv) == "table") then
+							-- for kk2, vvv in pairs(vv)do
+								-- if (type(vvv) == "string") then
+								-- print("output: " ..k ..": " ..kk ..kk2 .." = " ..vvv);
+								-- else
+								-- print (type(vvv));
+								-- end;
+							-- end;
+						-- end;
+					-- end;
+				-- end;
 				
 				
-			end;
-		print ("-------------" ..gAm.count .."----------------");
+			-- end;
+		-- print ("-------------" ..gAm.count .."----------------");
 	
-	end;
+	-- end;
 end;
 
 function gAm:draw()

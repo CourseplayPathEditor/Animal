@@ -25,6 +25,7 @@ function gAm._man:loadMap(name)
 print("manager.lua:loadMap(name)");
 	gAm:createConfig();
 	gAm:setup();
+	gAm:debugging();
 end;
 
 function gAm._man:mouseEvent(posX, posY, isDown, isUp, button)

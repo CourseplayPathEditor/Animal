@@ -158,11 +158,11 @@ function gAm:debugging()
 			print("gAm: ",k, " = ", v);
 			end;
 			
-			for k, v in pairs (gAm_mn) do
-			print("gAm_mn: ",k, " = ", v);
+			for k, v in pairs (gAm.animals) do
+			print("gAm.animals: ",k, " = ", v);
 			end;
 			
-			for k, v in pairs (gAm_mn.cowPool) do
+			for k, v in pairs (gAm.animals.cowPool) do
 				for kk, vv in pairs (v) do
 					print("cowPool: ", kk, " = ", vv);
 				end;
