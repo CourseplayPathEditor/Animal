@@ -1,0 +1,160 @@
+GIANTS Engine Runtime 6.0.2 64bit (Build Date: Dec  8 2014)
+Copyright (c) 2008-2014, GIANTS Software GmbH (giants-software.com), All Rights Reserved.
+Copyright (c) 2003-2014, Christian Ammann and Stefan Geiger, All Rights Reserved.
+Application: FarmingSimulator2015
+Main System
+  CPU: AMD FX(tm)-8320 Eight-Core Processor           
+  Memory: 16283 MB
+  OS: Windows NT 6.1 64-bit
+Physics System
+  Version: 5.9.4
+  Thread(s): 2
+Input System
+  Keyboard enabled
+  Mouse enabled
+  Gamepad/Joystick enabled
+  Force Feedback disabled
+Sound System
+  Driver: OpenAL
+  Version: 1.1
+  Device:  Generic Software
+  Max. sources: 256
+Render System
+  Driver: OpenGL
+  Card Vendor: ATI Technologies Inc.
+  Renderer: AMD Radeon R7 200 Series
+  Version: 3.2.13084 Compatibility Profile Context 14.301.1001.0
+  Shader Version: 4.40
+    GL_NV_texture_compression_vtc not supported
+    max_texture_layers: 16
+    OpenGL initialization successful
+Hardware Profile
+  Level: Medium (auto)
+  View Distance Factor: 1.000000
+  Shadow Quality: 1.000000
+  Skip Mipmaps: 1
+1.000000
+  Terrain LOD Distance Factor: 1.000000
+  Foliage View Distance Factor: 1.000000
+  Volume Mesh Tessellation Factor: 1.000000
+  Tyre Tracks Segments Factor: 1.000000
+Farming Simulator 15
+  Version: 1.2.0.0 1.2 RC6
+  Available Languages: en fr es it nl pt
+  Language: nl
+Game vehicle types loaded
+Mod directory: C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods/
+Load mod: main
+Error: Invalid mod name 'Nieuwe map'! Characters allowed: (_, A-Z, a-z, 0-9). The first character must not be a digit
+AnimalMod main structure set
+AnimalMod.Manager loaded
+data/sky/sky_day_night.i3d (7.97 ms)
+data/sky/rain.i3d (1.43 ms)
+data/sky/hail.i3d (0.98 ms)
+data/sky/dust.i3d (0.90 ms)
+data/maps/map02.i3d (7509.83 ms)
+-- manager.lua: gAm output --
+-----------------------------
+output: femaleNames = table
+output: savegameFilename = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/savegame1/AnimalMod_Dev.xml
+output: LUAdir = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//main//lua/
+output: vehicleName = vehicles
+output: maleNames = table
+output: XMLdir = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//main//xml/
+output: farm = table
+output: stats = table
+output: scriptName = AnimalMod_Dev
+output: getConfigFileName = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//main//xml/AnimalMod_Dev_conf.xml
+output: animalFillTypes = table
+output: _man_mt = table
+output: saveConfPath = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/savegame1
+output: setConfFilename = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/savegame1/AnimalMod_Dev_conf.xml
+output: _man = table
+output: IMGdir = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//main//img/
+output: animalStates = table
+output: game = table
+output: animals = table
+output: savegamePath = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/savegame1
+output: className = main.gAm
+output: LoadDir = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//main/
+output: animalTypes = table
+-------------1----------------
+data/vehicles/steerable/deutz/deutzAgroStar661.i3d (44.77 ms)
+dataS2/character/player/player.i3d (432.37 ms)
+data/vehicles/steerable/huerlimann/huerlimannH488.i3d (38.01 ms)
+data/vehicles/steerable/sampoRosenlew/sampoRosenlewC6.i3d (52.33 ms)
+data/vehicles/steerable/buehrer/buehrer6135A.i3d (19.70 ms)
+data/vehicles/tools/koeckerling/koeckerlingTrio300M.i3d (19.11 ms)
+data/vehicles/particleAnimations/koeckerling/koeckerlingTrio300M.i3d (5.71 ms)
+data/vehicles/tools/poettinger/poettingerVitasem302A.i3d (25.00 ms)
+data/vehicles/particleAnimations/poettinger/poettingerVitasem302A.i3d (1.64 ms)
+data/vehicles/trailers/brantner/brantnerE8041.i3d (10.21 ms)
+data/vehicles/cutters/sampoRosenlew/sampoRosenlewC6.i3d (17.77 ms)
+data/vehicles/tools/suer/suerSB700.i3d (4.39 ms)
+dataS/character/player/playerCCT.i3d (15.84 ms)
+-- manager.lua: gAm output --
+-----------------------------
+output: femaleNames: 1 = WhiteSox
+output: femaleNames: 2 = Bella
+output: femaleNames: 3 = Didi
+output: femaleNames: 4 = Mira
+output: femaleNames: 5 = Kim
+output: femaleNames: 6 = Ilona
+output: femaleNames: 7 = Romy
+output: femaleNames: 8 = Jesica
+output: femaleNames: 9 = LadyD
+output: femaleNames: 10 = Miranda
+output: savegameFilename = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/savegame1/AnimalMod_Dev.xml
+output: LUAdir = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//main//lua/
+output: vehicleName = vehicles
+output: maleNames: 1 = WhiteTail
+output: maleNames: 2 = Spotty
+output: maleNames: 3 = Duster
+output: maleNames: 4 = Mika
+output: maleNames: 5 = Killer
+output: maleNames: 6 = Bill
+output: maleNames: 7 = Max
+output: maleNames: 8 = Jef
+output: maleNames: 9 = Blacky
+output: maleNames: 10 = Smoky
+output: XMLdir = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//main//xml/
+output: scriptName = AnimalMod_Dev
+output: getConfigFileName = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//main//xml/AnimalMod_Dev_conf.xml
+function
+function
+function
+function
+function
+function
+function
+function
+output: _man_mt: __metatableclassName = main.gAm._man
+function
+function
+function
+function
+function
+number
+function
+function
+function
+function
+function
+function
+function
+function
+output: _man_mt: __indexclassName = main.gAm._man
+function
+function
+function
+function
+function
+number
+output: saveConfPath = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/savegame1
+output: setConfFilename = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/savegame1/AnimalMod_Dev_conf.xml
+output: _man: className = main.gAm._man
+output: IMGdir = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//main//img/
+output: savegamePath = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/savegame1
+output: className = main.gAm
+output: LoadDir = C:/Users/Dirk Peeters/Documents/My Games/FarmingSimulator2015/mods//main/
+-------------2----------------
