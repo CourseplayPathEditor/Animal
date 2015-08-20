@@ -29,7 +29,7 @@ gAm.savegameFilename = gAm.savegamePath .. "/" .. gAm.scriptName ..".xml";
 
 -- configfile dir
 gAm.saveConfPath = getUserProfileAppPath() .. "savegame" .. g_careerScreen.selectedIndex;
-gAm.setConfFilename = gAm_a.savegamePath .. "/" ..gAm.scriptName .."_conf" ..".xml";
+gAm.setConfFilename = gAm.savegamePath .. "/" ..gAm.scriptName .."_conf" ..".xml";
 gAm.getConfigFileName = Utils.getFilename(gAm.scriptName .."_conf" ..".xml", gAm.XMLdir);
 ----------------
 -- variables --
@@ -42,7 +42,7 @@ gAm.farm = {}; -- reference to script data
 gAm.game = {}; -- reference to player data
 
 -- Stats to be saved & synced // only sync with gAm_mn.farm or gAm_mn.game
-gAm_a.stats = {}; -- this table will hold all information, and will be used to save, draw, sync functions
+gAm.stats = {}; -- this table will hold all information, and will be used to save, draw, sync functions
 gAm.confFound = false;
 gAm.xmlFound = false;
 
@@ -71,7 +71,7 @@ gAm.femaleNames = { -- Animal female naming
 [9] = "LadyD",
 [10] = "Miranda"};
 ------
-local count = 0;
+gAm.count = 0;
 ---------------
 function gAm:getFilesCallback(filename, configname)
 	if (filename == gAm.scriptName ..".xml") then
@@ -85,19 +85,25 @@ end;
 ----------------------------
 -- functions needed by game
 function gAm:loadMap(name)
+	print ("-- manager.lua: gAm output --");
+	print ("-----------------------------");
+	gAm.count = gAm.count + 1;
 	for k, v in pairs (gAm) do
-		print ("-- manager.lua: gAm output --");
-		print ("-----------------------------");
-		print("output: " ..k .." = " ..v);
-		print ("-----------------------------");
-		count = count + 1;
+		
+		if (type(v) == "string") then
+		print("output: " ..k .." = " ..string.format(v));
+		elseif(type(v) == "table") then
+		print("output: " ..k .." = " ..type(v));
+		end;
+		
+		
 	end;
-	
+	print ("-------------" ..gAm.count .."----------------");
 	-- checking for config --
-	if() then
+	-- if() then
 	-- if the configfile is missing stop the script from starting up
-	return gAm = nil;
-	end;
+	-- return gAm = nil;
+	-- end;
 	-------------------------
 end;
 
@@ -108,21 +114,39 @@ function gAm:keyEvent(unicode, sym, modifier, isDown)
 end;
 
 function gAm:updateTick(dt)
-	if (count == 1) then
-		count = count + 1;
-		for k, v in pairs (gAm) do
-			print ("-- manager.lua: gAm output --");
-			print ("-----------------------------");
-			print("output2: " ..k .." = " ..v);
-			print ("-----------------------------");
-			
-		end;	
 	
-	end;
 end;
 
 function gAm:update(dt)
-
+	if (gAm.count == 1) then
+		print ("-- manager.lua: gAm output --");
+		print ("-----------------------------");
+		gAm.count = gAm.count + 1;
+			for k, v in pairs (gAm) do
+				
+				if (type(v) == "string") then
+				print("output: " ..k .." = " ..string.format(v));
+				elseif(type(v) == "table") then
+					for kk, vv in pairs(v)do
+						if (type(vv) == "string") then
+						print("output: " ..k ..": " ..kk .." = " ..vv);
+						elseif(type(vv) == "table") then
+							for kk2, vvv in pairs(vv)do
+								if (type(vvv) == "string") then
+								print("output: " ..k ..": " ..kk ..kk2 .." = " ..vvv);
+								else
+								print (type(vvv));
+								end;
+							end;
+						end;
+					end;
+				end;
+				
+				
+			end;
+		print ("-------------" ..gAm.count .."----------------");
+	
+	end;
 end;
 
 function gAm:draw()
@@ -148,9 +172,9 @@ InitObjectClass(gAm._man, "gAm._man");
 local modItem = ModsUtil.findModItemByModName(g_currentModName);
 
 
-local am = require("lua.main");
-local animalTypes = am.gAm.mn.types;
-local defaultType = animalTypes[8];
+-- local am = require("lua.main");
+-- local animalTypes = am.gAm.mn.types;
+-- local defaultType = animalTypes[8];
 
 
 -- own functions----
