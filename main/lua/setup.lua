@@ -103,6 +103,18 @@ gAm.stats.feeding.types.wheat.fillLevelCow = 0;
 gAm.stats.feeding.types.wheat.fillLevelSheep = 0;
 gAm.stats.feeding.types.wheat.fillLevelChicken = 0;
 -- add more types ---
+-- health
+a.maxHealth = 100;
+a.medHealth = 50;
+a.minHealth = 0;
+-- timers
+gAm.startDay = 0;
+gAm.startTime = 0;
+-- global
+gAm.firstTimeRun = false;
+gAm.isCowCheck = false;
+gAm.isSheepCheck = false;
+gAm.isChickenCheck = false;
 
 -----------------------------------------------------------------
 

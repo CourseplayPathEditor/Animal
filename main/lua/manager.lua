@@ -23,7 +23,7 @@ end;
 -- functions needed by game
 function gAm._man:loadMap(name)
 print("manager.lua:loadMap(name)");
-	gAm:createSettings();
+	
 	gAm:setup();
 	gAm:syncFarm();
 	gAm:syncGame();
@@ -47,7 +47,7 @@ function gAm._man:update(dt)
 		gAm.totalNumCows = g_currentMission.husbandries.cow.totalNumAnimals;
 		gAm:syncFarm();
 		gAm:syncGame();
-		gAm:saveData();
+		--gAm:saveData();
 	end;
 end;
 

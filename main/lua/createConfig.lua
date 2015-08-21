@@ -61,9 +61,9 @@ local animals = gAm.animals;
 	
 	-- pools 
 	-- poolTagCow
-	setXMLInt(xmlFile, poolTagCow ..".pool#minCowPool", animals.minCowPool); -- max cows you could own
-	setXMLInt(xmlFile, poolTagCow ..".pool#medCowPool", animals.medCowPool); -- max cows you could own
-	setXMLInt(xmlFile, poolTagCow ..".pool#maxCowPool", animals.maxCowPool); -- max cows you could own
+	setXMLInt(xmlFile, poolTagCow .."#minCowPool", animals.minCowPool); -- max cows you could own
+	setXMLInt(xmlFile, poolTagCow .."#medCowPool", animals.medCowPool); -- max cows you could own
+	setXMLInt(xmlFile, poolTagCow .."#maxCowPool", animals.maxCowPool); -- max cows you could own
 	--setXMLInt(xmlFile, poolTagCow .."#curCowPool", a.curCowPool); -- set by config.xml
 	-- poolTagSheep
 	setXMLInt(xmlFile, poolTagSheep .."#minSheepPool", animals.minSheepPool); -- max cows you could own
@@ -89,8 +89,8 @@ local animals = gAm.animals;
 	setXMLInt(xmlFile, breedTagCow .."#cbPeriodTime", animals.cbPeriodTime); -- time in day's that the breeding period lest  
 	setXMLInt(xmlFile, breedTagSheep .."#sbPeriod", animals.sbPeriod ); -- multiplier for breeding (time)
 	setXMLInt(xmlFile, breedTagSheep .."#sbPeriodTime", animals.sbPeriodTime); -- time in day's that the breeding period lest  
-	setXMLInt(xmlFile, breedTagChicken ..".breedTimes#sbPeriod", animals.sbPeriod ); -- multiplier for breeding (time)
-	setXMLInt(xmlFile, breedTagChicken ..".breedTimes#sbPeriodTime", animals.sbPeriodTime); -- time in day's that the breeding period lest  
+	setXMLInt(xmlFile, breedTagChicken .."#sbPeriod", animals.sbPeriod ); -- multiplier for breeding (time)
+	setXMLInt(xmlFile, breedTagChicken .."#sbPeriodTime", animals.sbPeriodTime); -- time in day's that the breeding period lest  
 			
 	-- weights		
 	setXMLInt(xmlFile, breedTagCow .."#maxCowWeight", animals.maxCowWeight); -- max weight of healthy animal
@@ -99,9 +99,9 @@ local animals = gAm.animals;
 	setXMLInt(xmlFile, breedTagSheep .."#maxSheepWeight", animals.maxSheepWeight); -- max weight of healthy animal
 	setXMLInt(xmlFile, breedTagSheep .."#minSheepWeight", animals.minSheepWeight); -- min weight 
 	setXMLInt(xmlFile, breedTagSheep .."#curSheepWeight", animals.curSheepWeight); -- current weight
-	setXMLInt(xmlFile, breedTagChicken ..".weight#maxChickenWeight", animals.maxChickenWeight); -- max weight of healthy animal
-	setXMLInt(xmlFile, breedTagChicken ..".weight#minChickenWeight", animals.minChickenWeight); -- min weight 
-	setXMLInt(xmlFile, breedTagChicken ..".weight#curChickenWeight", animals.curChickenWeight); -- current weight
+	setXMLInt(xmlFile, breedTagChicken .."#maxChickenWeight", animals.maxChickenWeight); -- max weight of healthy animal
+	setXMLInt(xmlFile, breedTagChicken .."#minChickenWeight", animals.minChickenWeight); -- min weight 
+	setXMLInt(xmlFile, breedTagChicken .."#curChickenWeight", animals.curChickenWeight); -- current weight
 	
 	-- aging --
 	setXMLInt(xmlFile, ageTagCow .."#maxCowAge", animals.maxCowAge); -- max age
@@ -114,21 +114,21 @@ local animals = gAm.animals;
 	-- W i P --
 	-- these variables need to be added in setup.lua then uncomment them here.
 	-- health --
-	--setXMLInt(xmlFile, healthTag .."#maxHealth", animals.maxHealth); -- max health
-	--setXMLInt(xmlFile, healthTag .."#maxHealth", animals.medHealth); -- med health
-	--setXMLInt(xmlFile, healthTag .."#maxHealth", animals.minHealth); -- min health
+	setXMLInt(xmlFile, healthTag .."#maxHealth", animals.maxHealth); -- max health
+	setXMLInt(xmlFile, healthTag .."#maxHealth", animals.medHealth); -- med health
+	setXMLInt(xmlFile, healthTag .."#maxHealth", animals.minHealth); -- min health
 	
 	-- timers
 	--day--
-	--setXMLInt(xmlFile, dayTag .."#startDay", am.startDay); -- start day = 0 = g_currentMission.environment.currentDay
+	setXMLInt(xmlFile, dayTag .."#startDay", am.startDay); -- start day = 0 = g_currentMission.environment.currentDay
 	--time--
-	--setXMLInt(xmlFile, timeTag .."#startTime", am.startTime); -- startTime = 0 = g_currentMission.time
+	setXMLInt(xmlFile, timeTag .."#startTime", am.startTime); -- startTime = 0 = g_currentMission.time
 	
 	-- global settings
-	--setXMLBool(xmlFile, globalTag .."#firstTimeRun", am.firstTimeRun); -- false
-	--setXMLBool(xmlFile, globalTag .."#isCowCheck", am.isCowCheck); -- false
-	--setXMLBool(xmlFile, globalTag .."#isSheepCheck", am.isSheepCheck);
-	--setXMLBool(xmlFile, globalTag .."#isChickenCheck", am.isChickenCheck);
+	setXMLBool(xmlFile, globalTag ..".runTime#firstTimeRun", am.firstTimeRun); -- false
+	setXMLBool(xmlFile, globalTag ..".checkers#isCowCheck", am.isCowCheck); -- false
+	setXMLBool(xmlFile, globalTag ..".checkers#isSheepCheck", am.isSheepCheck);
+	setXMLBool(xmlFile, globalTag ..".checkers#isChickenCheck", am.isChickenCheck);
 	end;
 	
 	saveXMLFile(xmlFile);

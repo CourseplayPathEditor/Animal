@@ -103,7 +103,7 @@ function gAm:getFilesCallback(filename, configname)
 		gAm.xmlFound = true;
 	end;
 	
-	if (configname == gAm.scriptName .."_conf" ..".xml") then
+	if (configname == gAm.configName ..".xml") then
 		gAm.confFound = true;
 	end;
 end;
@@ -113,7 +113,7 @@ assert(fileExists(filePath), ('ANIMALMOD ERROR: "manager.lua" can\'t be found at
 source(filePath);
 -------------------
 local function initialize()
---function gAm:initialize()
+--function gAm:initiate()
 	local fileList = {
 		'createConfig',
 		'setup',
@@ -132,15 +132,21 @@ local function initialize()
 		print('\t### AnimalMod: ' .. filePath .. ' has been loaded');
 		numFilesLoaded = numFilesLoaded + 1;
 	end;
-
+	
 	print(('### AnimalMod: initialized %d/%d files (v%s)'):format(numFilesLoaded, numFiles, gAm.version));
 end;
-
 initialize();
 -----------------------------
 -- functions needed by game
 function gAm:loadMap(name)
-
+	 if (self.initialized) then
+	 print ("self.initialized")
+        -- return;
+     end;
+	--gAm:initiate();
+	--initialize();
+	gAm:createSettings();
+	gAm:saveData();
 	-- print ("-- manager.lua: gAm output --");
 	-- print ("-----------------------------");
 	-- gAm.count = gAm.count + 1;
@@ -163,6 +169,7 @@ function gAm:loadMap(name)
 	-------------------------
 end;
 
+----------
 function gAm:mouseEvent(posX, posY, isDown, isUp, button)
 end;
 
