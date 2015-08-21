@@ -27,7 +27,7 @@ print("manager.lua:loadMap(name)");
 	gAm:setup();
 	gAm:syncFarm();
 	gAm:syncGame();
-	--gAm:debugging();
+	gAm:debugging();
 end;
 
 function gAm._man:mouseEvent(posX, posY, isDown, isUp, button)

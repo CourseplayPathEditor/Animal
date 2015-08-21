@@ -106,30 +106,30 @@ gAm.stats.feeding.types.wheat.fillLevelChicken = 0;
 
 -----------------------------------------------------------------
 
--- local variables --------
+-- variables --------
 -- enable or disable breeding --
-local isCowBreed = true; -- enable or disable cow breeding, default is off
-local isSheepBreed = true; -- enable or disable cow breeding, default is off
-local isChickenBreed = true; -- enable or disable cow breeding, default is off
-local cowCheck = 0;
-local sheepCheck = 0;
-local chickenCheck = 0;
+isCowBreed = true; -- enable or disable cow breeding, default is off
+isSheepBreed = true; -- enable or disable cow breeding, default is off
+isChickenBreed = true; -- enable or disable cow breeding, default is off
+cowCheck = 0;
+sheepCheck = 0;
+chickenCheck = 0;
 -- timers to do our checking
-local day = 0;
-local curDay = 0;
-local dTime = 0;
-local curTime = 0;
-local cowTime = 0;
-local sheepTime = 0;
-local chickenTime = 0;
-local eggTime = 0;
-local syncTime = 0;
+day = 0;
+curDay = 0;
+dTime = 0;
+curTime = 0;
+cowTime = 0;
+sheepTime = 0;
+chickenTime = 0;
+eggTime = 0;
+syncTime = 0;
 -- multipliers
 -- todo
 -- price per kilo
-local cowKg = 5; 
-local sheepKg = 3.5;
-local chickenKg = 0.5;
+cowKg = 5; 
+sheepKg = 3.5;
+chickenKg = 0.5;
 
 function gAm:getPrice(animalType, weight) -- useage: gAm:getPrice("cow", gAm_mn.curCowWeight), gAm:getPrice("sheep", gAm_mn.curSheepWeight), gAm:getPrice("chicken", gAm_mn.curChickenWeight)
 local animal = animalType;
@@ -148,38 +148,7 @@ local price = 0;
 	return price;
 end;
 ---------------------------
--- debugging our script -------------------
-function gAm:debugging()
-	if (gAm.deBug == true) then
-		a = gAm;
-		if (a == nil) then
-		print ("gAm does not exist");
-		else
-		print ("gAm is ready");
-			for k, v in pairs (gAm) do
-			print("gAm: ",k, " = ", v);
-			end;
-			
-			for k, v in pairs (gAm.animals) do
-			print("gAm.animals: ",k, " = ", v);
-			end;
-			
-			for k, v in pairs (gAm.animals.cowPool) do
-				for kk, vv in pairs (v) do
-					print("cowPool: ", kk, " = ", vv);
-				end;
-			
-			end;
-			print ("--------------pools-------------------");
-			print ("cow: ", string.format(#gAm.animals.cowPool));
-			print ("sheep: ", string.format(#gAm.animals.sheepPool));
-			print ("chicken: ", string.format(#gAm.animals.chickenPool));
-			print ("---------------------------------");
-		end;
-	end;
-	
-end;
---------------------------------------------
+
 -- these functions run only once at startup ---
 function gAm:SetCowPool()
 local a = gAm.animals.cowPool;
