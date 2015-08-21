@@ -55,8 +55,8 @@ extra:
 - forEggs
 
 Configuration:
-animalmod naming = gAm_(scriptName)
-table naming = gAm_Main.(structure)
+animalmod naming = gAm(_scriptName)
+table naming = gAm.(structure)
 maxCowPool = 500
 maxChickenPool = 1500
 maxSheepPool = 1500
