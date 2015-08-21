@@ -1,0 +1,61 @@
+Overview of the workFlow that gives us errors or unexpected log entries
+----------------------------------------------------------------------------
+- when i run the animalMod in fs2015 i notis a double scriptFile loading in the logs.
+
+the script is in a very beginning stage were we setting the variables and tables.
+building functions to only debug the code, save and load the configuration file, save and load data.
+as we progress in building, new workFlow ideas come but also include rebuilding the base structure.
+
+- this part gives me a double log entry, no errors in the scripts log is clean. (check Animal/logs)
+when initialize(); is active we got the double entry
+i'm using code from Courseplay
+<code>
+-- inspired by courseplay.lua
+gAm.path = g_currentModDirectory;
+if gAm.path:sub(-1) ~= '/' then
+	gAm.path = gAm.path .. '/';
+end;
+
+
+-- place sub-classes here in order to get an overview of the contents, subclasses wil start like gAm."_class", "gAm._man"
+-------------------
+gAm._man = {};
+gAm._breed = {};
+gAm._Utils = {};
+----------------------------
+local filePath = gAm.path .. 'lua/manager.lua';
+assert(fileExists(filePath), ('ANIMALMOD ERROR: "manager.lua" can\'t be found at %q'):format(filePath));
+source(filePath);
+-------------------
+local function initialize()
+--function gAm:initialize()
+	local fileList = {
+		'createConfig',
+		'setup',
+		'datasync',
+		'loadData',
+		'saveData',
+		'debugging',
+		'breed'
+	};
+
+	local numFiles, numFilesLoaded = #(fileList) + 2, 2; -- + 2 as 'animalMod.lua' and 'manager.lua' have already been loaded
+	for _,file in ipairs(fileList) do
+		local filePath = gAm.LUAdir .. file .. '.lua';
+		assert(fileExists(filePath), '\tANIMALMOD ERROR: could not load file ' .. filePath);
+		source(filePath);
+		print('\t### AnimalMod: ' .. filePath .. ' has been loaded');
+		numFilesLoaded = numFilesLoaded + 1;
+	end;
+
+	print(('### AnimalMod: initialized %d/%d files (v%s)'):format(numFilesLoaded, numFiles, gAm.version));
+end;
+
+initialize();
+</code>
+
+As we still setting up the classes and seperated lua files, this part is for now the most important part that needs to be fixed.
+courseplay loads 3 files 'local numFiles, numFilesLoaded = #(fileList) + 3, 3;' 
+the animalMod loads 2 'local numFiles, numFilesLoaded = #(fileList) + 2, 2;'
+
+i go investigate the trhee courseplay scripts to find what i'm missing.
