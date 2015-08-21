@@ -1,5 +1,6 @@
 Here we define and explain the lua files created.
 --------------------------------------------------
+-- ToDo: recreate this page.
 files:
 main.lua: i go change this name to setup instead of main
 - this file is used to setup the main structure and handle the loading and saving
