@@ -23,7 +23,7 @@ end;
 -- functions needed by game
 function gAm._man:loadMap(name)
 print("manager.lua:loadMap(name)");
-	gAm:createConfig();
+	gAm:createSettings();
 	gAm:setup();
 	gAm:syncFarm();
 	gAm:syncGame();
