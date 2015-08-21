@@ -41,9 +41,10 @@ gAm.savegamePath = getUserProfileAppPath() .. "savegame" .. g_careerScreen.selec
 gAm.savegameFilename = gAm.savegamePath .. "/" .. gAm.scriptName ..".xml";
 
 -- configfile dir
+gAm.configName = "settings"; -- settings.xml to store and load mainData
 gAm.saveConfPath = getUserProfileAppPath() .. "savegame" .. g_careerScreen.selectedIndex;
-gAm.setConfFilename = gAm.savegamePath .. "/" ..gAm.scriptName .."_conf" ..".xml";
-gAm.getConfigFileName = Utils.getFilename(gAm.scriptName .."_conf" ..".xml", gAm.XMLdir);
+gAm.setConfFilename = gAm.savegamePath .. "/" ..gAm.configName ..".xml";
+gAm.getConfigFileName = Utils.getFilename(gAm.configName ..".xml", gAm.XMLdir);
 ----------------
 -- variables --
 gAm.animalTypes = {[1] = "cow", [2] = "sheep", [3] = "chicken"};
