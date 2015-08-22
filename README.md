@@ -11,18 +11,18 @@ Providing the following systems:
 Progress:
 we currently setting up the main structure.
 - fase 1: (in progress)
-setting variables
-saving the configFile
-loading the configFile
-create debug system
-loading the data
-saving the data
+setting variables, 
+saving the configFile, 
+loading the configFile, 
+create debug system, 
+loading the data, 
+saving the data, 
 debugging structure before moving on
 - fase 2:(todo)
-creating functions
+creating functions, 
 debug functions and adjust were needed
 - fase 3:(todo)
-beta test in SP mode
+beta test in SP mode, 
 beta test in MP & Dedicated mode
 
 
