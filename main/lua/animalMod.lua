@@ -25,7 +25,8 @@ if gAm.path:sub(-1) ~= '/' then
 	gAm.path = gAm.path .. '/';
 end;
 
-
+self.firstTime = true;
+self.initialized = true;
 -- place sub-classes here in order to get an overview of the contents, subclasses wil start like gAm."_class", "gAm._man"
 -------------------
 gAm._man = {};
@@ -136,13 +137,25 @@ local function initialize()
 	print(('### AnimalMod: initialized %d/%d files (v%s)'):format(numFilesLoaded, numFiles, gAm.version));
 end;
 initialize();
------------------------------
+--------------ToDo---------------
+function gAm:loadData(firstTimeLoad)
+ -- todo
+end;
+
+function gAm:datastored()
+
+end;
+
+function gAm:datastored()
+
+end;
+--------------------------------
 -- functions needed by game
 function gAm:loadMap(name)
-	 if (self.initialized) then
+	if (self.initialized) then
 	 print ("self.initialized")
-        -- return;
-     end;
+	return;
+    end;
 	--gAm:initiate();
 	--initialize();
 	gAm:createSettings();
