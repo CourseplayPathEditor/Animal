@@ -1,0 +1,103 @@
+Fillable = {};
+Fillable.FILLTYPE_WHEAT_WINDROW = 0;
+Fillable.NUM_FILLTYPES = 0;
+Fillable.fillTypeNameToInt = {};
+Fillable.fillTypeIntToName = {};
+
+Animalable = {};
+Animalable = Fillable;
+Animalable.NUM_FILLTYPES = 0;
+Animalable.MAX_FILLTYPES = 3;
+
+function test(name)
+local key = "FILLTYPE_"..string.upper(name);
+
+
+if Fillable[key] == nil then
+if Fillable.NUM_FILLTYPES >= Animalable.MAX_FILLTYPES then
+print("Error: Fillable.registerFillType too many fill types. Only " ..tostring(Animalable.MAX_FILLTYPES) .." fill types are supported");
+            return;
+end;
+
+Fillable.NUM_FILLTYPES = Fillable.NUM_FILLTYPES +1;
+Fillable[key] = Fillable.NUM_FILLTYPES;
+Fillable.fillTypeNameToInt[name] = Fillable.NUM_FILLTYPES;
+Fillable.fillTypeIntToName[Fillable.NUM_FILLTYPES] = name;
+end;
+print (key);
+end;
+
+
+test("pig");
+test("cow");
+test("sheep");
+test("horse");
+
+for k,v in pairs (Animalable) do
+print(k,v);
+if (type(v) == "table") then
+for j ,l in pairs(v) do
+print (j,l);
+end;
+end;
+end;
+
+-------------------------------------------------
+------------- OUTPUT ----------------------------
+FILLTYPE_PIG
+FILLTYPE_COW
+FILLTYPE_SHEEP
+Error: Fillable.registerFillType too many fill types. Only 3 fill types are supported
+FILLTYPE_SHEEP	3
+FILLTYPE_WHEAT_WINDROW	0
+FILLTYPE_PIG	1
+FILLTYPE_COW	2
+NUM_FILLTYPES	3
+fillTypeIntToName	table: 0x6f5ec0
+1	pig
+2	cow
+3	sheep
+fillTypeNameToInt	table: 0x6f5d10
+pig	1
+cow	2
+sheep	3
+MAX_FILLTYPES	3
+-------------------------------------------------
+--- code ---
+t = {};
+t.name = "testMod";
+
+local script = t;
+script.extra = {};
+
+
+function script.extra:tes()
+print("extra function");
+end;
+
+
+
+for k,v in pairs(t) do
+print ("t: " ..k,v, type(v));
+if (type(v)== "table") then
+for z,x in pairs(v) do
+print ("v: " ..z, x, type(v));
+if(type(x) == "function") then
+print ("oki");
+x();
+end;
+end;
+end;
+
+end;
+if(type(t.extra.tes) == "function")then
+print("yes");
+end;
+--- OUTPUT ------
+t: extra	table: 0xd197f0	table
+v: tes	function: 0xd0fef0	table
+oki
+extra function
+t: name	testMod	string
+yes
+-----------------
