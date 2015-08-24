@@ -25,3 +25,8 @@ function AnimalUtils:getFruits(animal)
 	end;
 end;
 
+function AnimalUtils:husbandriesToAnimal(animal)
+	for k, v in pairs (g_currentMission.husbandries[animal]) do
+	table.insert(AnimalUtil.AnimalTypes[animal][k],v);
+	end;
+end;
