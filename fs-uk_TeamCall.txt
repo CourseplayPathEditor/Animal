@@ -1,0 +1,23 @@
+i'm jengske and i have bin working for many years on a animalMod. i have a non-published version for fs2013.
+this was done with the help of Decker and Xentro who guided me in scripting.
+
+At that point my knowledge of scripting was poor, last year i took some courses mainly on c# for Unity 3D.
+By doing the courses i get a better understanding. And see now where i could adjust or write shorter code as i did on the fs2013 version.
+
+Therefore we going to create a complete new version. The idea of the original 'AnimalMod' stays the same but the way we go handle it will be complete new.
+
+For this we need people that could do the following:
+- create 3dmodels and know how to create the xml files for it
+- animate the models, directly inside 3dsmax/maya or true xml 
+- mapdesign, you need to have advanced knowledge
+- scripting, have a good knowledge of  lua and the workflow of the game
+
+If you have one of the skills mentioned in the list above and you're interested in the project and want to be part of the team.
+You can leave a reply with your contact information and provide us examples of work you done.
+
+The team will evaluate and let you know if your accepted. Once in the team we will provide you with the needed information.
+
+Plz do not reply if you do not have the skills needed for our project, we looking for serious people that have the proper knowledge. 
+
+thx
+AnimalMod Team
