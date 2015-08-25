@@ -2,6 +2,9 @@
 We building a livecycle system for Giants Farming Simulator 2015.
 http://www.farming-simulator.com/
 --------------------------------------------------------------------------
+youTube channel, previous versions
+https://www.youtube.com/watch?v=8_JPJ_PbnJg&index=21&list=PLDXzFlpjUoQ1xxm_qycRqWkN7NypAyn2u
+
 Providing the following systems:
 - aging
 - health
