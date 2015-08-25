@@ -61,3 +61,7 @@ maxCowPool = 500
 maxChickenPool = 1500
 maxSheepPool = 1500
 
+Animals animations:
+use splines to trigger animations and scripts
+make the animal a standalone object that you could buy in the store
+make it placeable and simple to implement.
