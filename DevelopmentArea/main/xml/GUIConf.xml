@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<Gui_Screen>
+    <Author>jengske_BE</Author>
+    <Date>18/08/2015</Date>
+    <Copyright>jengske_BE</Copyright>
+    <Settings>
+        <activation>
+            <script scriptActive="true" />
+            <deBug deBugOn/Off="true" />
+            <mode defaultMode="production" />
+            <breed isCowBreed="false" isSheepBreed="false" isChickenBreed="false" />
+        </activation>
+        <setCow>
+            <pool minCowPool="100" medCowPool="250" maxCowPool="500" curCowPool="250" />
+            <age maxCowAge="5" cowBreedAge="3" />
+            <breedTimes maxCowBreedTime="1" cbPeriod="60000" cbPeriodTime="5" />
+            <weight maxCowWeight="500" minCowWeight="15" curCowWeight="0" />
+            <price curCowPrice="0" />
+        </setCow>
+        <setSheep>
+            <pool minSheepPool="50" medSheepPool="250" maxSheepPool="500" curSheepPool="250" />
+            <age maxSheepAge="5" sheepBreedAge="3" />
+            <breedTimes maxSheepBreedTime="1" sbPeriod="60000" sbPeriodTime="5" />
+            <weight maxSheepWeight="100" minSheepWeight="15" curSheepWeight="0" />
+            <price curSheepPrice="0" />
+        </setSheep>
+        <setChicken>
+            <pool minChickenPool="10" medChickenPool="0" maxChickenPool="1500" curChickenPool="10" />
+            <age maxChickenAge="5" chickenBreedAge="3" />
+            <breedTimes maxChickenBreedTime="1" chbPeriod="60000" chbPeriodTime="5" />
+            <weight maxChickenWeight="4" minChickenWeight="1" curChickenWeight="0" />
+            <price curChickenPrice="0" />
+        </setChicken>
+    </settings>
+</Gui_Screen>
