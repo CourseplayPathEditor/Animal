@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<infoPanel background="infoPanel/chick.png">
+  <caption text=""/>
+  <form>
+    <progressBars>
+      <progressBar object="2" value="fillLevel" min="0" max="40000" type="horizontal" position="0.396 0.552" width="0.209" height="0.060" img="infoPanel/horizontal.png" />
+      <progressBar object="1" value="fillLevel" min="0" max="40000" type="horizontal" position="0.396 0.637" width="0.209" height="0.060" img="infoPanel/horizontal.png" />
+      <progressBar value="fillLevel1" min="0" max="100000" type="horizontal" position="0.396 0.780" width="0.209" height="0.060" img="infoPanel/horizontal.png" />
+    </progressBars>
+    <staticTexts>
+      <staticText text="Chicken" position="0.715 0.515" size="0.025" align="right" color="1 1 1 1" bold="true" shadow="true"/>
+      <staticText text="Pigs" position="0.715 0.605" size="0.025" align="right" color="1 1 1 1" bold="true" shadow="true"/>
+      <staticText text="Eggs," position="0.715 0.733" size="0.025" align="right" color="1 1 1 1" bold="true" shadow="true"/>
+      <staticText text="Sausages" position="0.715 0.753" size="0.025" align="right" color="1 1 1 1" bold="true" shadow="true"/>
+    </staticTexts>
+    <valueTexts>
+      <valueText object="2" value="fillLevel" position="0.715 0.540" align="right" size="0.02" color="1 1 1 1" bold="true" shadow="true" format="(%d l)"/>
+      <valueText object="1" value="fillLevel" position="0.715 0.630" align="right" size="0.02" color="1 1 1 1" bold="true" shadow="true" format="(%d l)"/>
+      <valueText value="fillLevel1" position="0.715 0.778" align="right" size="0.02" color="1 1 1 1" bold="true" shadow="true" format="(%d l)"/>
+    </valueTexts>
+    <percentTexts>
+      <percentText object="2" value="fillLevel" min="0" max="40000" position="0.5 0.530" align="center" size="0.02" color="1 1 1 1" bold="true" shadow="true" format="%d%%"/>
+      <percentText object="1" value="fillLevel" min="0" max="40000" position="0.5 0.615" align="center" size="0.02" color="1 1 1 1" bold="true" shadow="true" format="%d%%"/>
+      <percentText value="fillLevel1" min="0" max="100000" position="0.5 0.761" align="center" size="0.02" color="1 1 1 1" bold="true" shadow="true" format="%d%%"/>
+    </percentTexts>
+    <images>
+      <image src="infoPanel/postit.png" position="0.75 0.98" width="0.2" height="0.3" showOnlyWithHelp="true"/>
+    </images>
+  </form>
+</infoPanel>
