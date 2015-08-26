@@ -9,11 +9,18 @@ Providing the following systems:
 - aging
 - health
 - breeding
-- production (this will be added in a second version)
+- production 
+- transportable animals
+- monitor true a smartTV
 
-Progress:
+Our goal is to implement a new AnimalSystem with animated animals that you could transport from stable to land or sellpoints.
+We still looking for team members to help us reach our goal.
+
+Progress:  
 we currently setting up the main structure.
-- fase 1: (in progress)
+- lastWorkDone: (code to test 'fruitFix.lua', proto panel 'panel.psd')
+
+- fase 1: (in progress)  
 setting variables, 
 saving the configFile, 
 loading the configFile, 
