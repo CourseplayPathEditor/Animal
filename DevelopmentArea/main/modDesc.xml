@@ -23,7 +23,9 @@ Dev version
     <extraSourceFiles>
         <sourceFile filename="lua/animalMod.lua"/>
     </extraSourceFiles>
-   
+   <inputBindings>
+        <input name="SHOW_FC_PANEL" key1="KEY_f12" button="" />
+    </inputBindings>
 
 </modDesc>
 

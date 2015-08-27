@@ -1,0 +1,57 @@
+-- this is a information sheet for developers.
+-- here we paste all the known g_ and basemission code we found that are
+-- not alway's public for the Farming Simulator community
+-- use print(type()) or for k,v in pairs() do print(k,v) end
+
+FSBaseMission
+getUserProfileAppPath()
+
+g_currentMission
+g_currentMission.missionInfo
+g_currentMission.ingameNews
+g_currentMission.environment.weatherTemperaturesDay
+g_currentMission.environment.weatherTemperaturesNight
+g_currentMission.ingameMap.isFullSize
+
+g_currentModDirectory
+
+g_screenAspectRatio
+g_inGameMenu
+g_gui.currentGui
+_G
+g_i18n
+g_screenWidth
+g_screenHeight
+g_languageShort
+
+if g_currentMission.missionInfo.customEnvironment ~= nil then
+    i18n = _G[g_currentMission.missionInfo.customEnvironment].g_i18n;
+  else
+    i18n = g_i18n;
+  end;
+ g_currentMission.missionStats:getStatisticData()
+ 
+ g_grassUsagePerAnimalPerDay[animalName]
+ g_silageUsagePerAnimalPerDay[animalName]
+ g_forageUsagePerAnimalPerDay[animalName]
+ g_strawUsagePerAnimalPerDay[animalName]
+ g_liquidManureLitersPerAnimalPerDay[animalName]
+ g_manureLitersPerAnimalPerDay[animalName]
+ g_palletFillLevelPerAnimalPerDay[animalName]
+ g_pickupObjectsPerAnimalPerDay[animalName]
+ g_milkLitersPerAnimalPerDay[animalName]
+ 
+ 
+ g_currentMission.husbandries[animalName]
+ 
+ g_currentMission:getSiloAmount()
+ g_currentMission:setSiloAmount()
+ 
+ g_onCreateUtil.addOnCreateFunction("functionName", "ClassName".onCreate);
+ g_onCreateUtil.addOnCreateFunction("sampleAA", sampleAA.onCreate);
+ 
+ g_currentMission.onCreateLoadedObjects
+ 
+ g_mouseControlsHelp
+ 
+ g_client

@@ -25,8 +25,8 @@ if gAm.path:sub(-1) ~= '/' then
 	gAm.path = gAm.path .. '/';
 end;
 
-self.firstTime = true;
-self.initialized = true;
+gAm.firstTime = true;
+gAm.initialized = true;
 -- place sub-classes here in order to get an overview of the contents, subclasses wil start like gAm."_class", "gAm._man"
 -------------------
 gAm._man = {};
@@ -117,6 +117,7 @@ local function initialize()
 --function gAm:initiate()
 	local fileList = {
 		'createConfig',
+		'guiManager',
 		'setup',
 		'datasync',
 		'loadData',
