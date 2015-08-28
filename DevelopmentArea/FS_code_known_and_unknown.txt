@@ -12,7 +12,24 @@ g_currentMission.ingameNews
 g_currentMission.environment.weatherTemperaturesDay
 g_currentMission.environment.weatherTemperaturesNight
 g_currentMission.ingameMap.isFullSize
-
+g_currentMission.ingameMap:createMapHotspot(tostring(fieldDef.fieldNumber), "dataS2/menu/blank.png", x, z, 0, 0, false, false, true, 0);
+g_currentMission:addSharedMoney(value);
+g_currentMission:addMoneyChange(value, FSBaseMission.MONEY_TYPE_SINGLE, true);
+g_currentMission.economyManager:getCurrentGreatDemand(self.tipTriggers[1].stationName, fillType);
+g_currentMission.missionStats.difficulty; -- 1  2  3
+g_currentMission:addExtraPrintText(g_i18n:getText("fill_level")..string.format(" %d (%d%%)", fillLevelPrint, fillLevelPercent));
+ g_currentMission.bunkerScore
+ g_currentMission.controlPlayer
+ g_currentMission.player.rootNode
+ g_currentMission.environment:addMinuteChangeListener(instance);
+ g_currentMission.environment:removeMinuteChangeListener(self);
+ g_currentMission.fieldDefinitionBase
+ g_currentMission:getIsServer()
+ g_currentMission:getIsClient()
+ (2 * math.pi) * (g_currentMission.environment.dayTime / (1000 * 60 * 60 * 12));
+ (2 * math.pi) * (g_currentMission.environment.dayTime / (1000 * 60 * 60));
+ g_currentMission.controlledVehicle 
+ 
 g_currentModDirectory
 
 g_screenAspectRatio
@@ -43,6 +60,7 @@ if g_currentMission.missionInfo.customEnvironment ~= nil then
  
  
  g_currentMission.husbandries[animalName]
+ AnimalHusbandry.playerWrappers[connection];
  
  g_currentMission:getSiloAmount()
  g_currentMission:setSiloAmount()
@@ -55,3 +73,32 @@ if g_currentMission.missionInfo.customEnvironment ~= nil then
  g_mouseControlsHelp
  
  g_client
+ 
+ g_isDemo
+ 
+   --table.insert(g_currentMission.updateables, helpIcons);
+g_currentMission.helpIconsBase = helpIcons;
+g_currentMission.missionStats.foundHelpIcons 
+messageNumber = helpIcon.helpIconCustomNumber;
+
+
+ -- throw player out of field dialog if he's currently got it open
+            if g_gui.currentGui ~= nil and g_gui.currentGuiName == "FieldDialog" and g_gui.currentGui.target.currentField == fieldDef then
+                g_gui.currentGui.target:onBackClick();
+end;
+
+local infoDialog = g_gui:showGui("InfoDialog");
+        infoDialog.target:setText(g_i18n:getText("NotPossibleInDemo"));
+infoDialog.target:setCallbacks(nil, nil, true);
+
+ g_fieldDialog:setReturnScreen("");
+g_gui:showGui("FieldDialog");
+
+if g_currentMission.controlPlayer then
+            if g_currentMission.player ~= nil then
+                playerPosition[1], playerPosition[2], playerPosition[3] = getWorldTranslation(g_currentMission.player.rootNode);
+            end
+    	elseif g_currentMission.controlledVehicle ~= nil then
+    		playerPosition[1], playerPosition[2], playerPosition[3] = getWorldTranslation(g_currentMission.controlledVehicle.rootNode);
+    	end;
+
