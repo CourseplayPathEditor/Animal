@@ -5,6 +5,8 @@
 
 FSBaseMission
 getUserProfileAppPath()
+g_currentMission.baseDirectory
+g_currentModDirectory
 
 g_currentMission
 g_currentMission.missionInfo
@@ -17,20 +19,38 @@ g_currentMission:addSharedMoney(value);
 g_currentMission:addMoneyChange(value, FSBaseMission.MONEY_TYPE_SINGLE, true);
 g_currentMission.economyManager:getCurrentGreatDemand(self.tipTriggers[1].stationName, fillType);
 g_currentMission.missionStats.difficulty; -- 1  2  3
+
 g_currentMission:addExtraPrintText(g_i18n:getText("fill_level")..string.format(" %d (%d%%)", fillLevelPrint, fillLevelPercent));
+g_currentMission:showBlinkingWarning(g_i18n:getText("Dont_drive_to_depth_into_the_water"), 2000);
+g_currentMission:addHelpButtonText(g_i18n:getText("TOGGLE_BEACON_LIGHTS"), InputBinding.TOGGLE_BEACON_LIGHTS);
+g_currentMission.ingameMap:createMapHotspot("Billboard", "dataS2/menu/hud/hud_pda_spot_billboard.png", x, z, nil, nil, false, false, false, self.triggerId, true);
+g_currentMission.ingameMap:deleteMapHotspot(self.mapHotspot);
+
+g_currentMission:enableHudIcon("tip", 4);
+terrainHeight = getTerrainHeightAtWorldPos(g_currentMission.terrainRootNode, x, y, z);
+playSample(g_currentMission.cashRegistrySound, 1, 1, 0);
+
  g_currentMission.bunkerScore
  g_currentMission.controlPlayer
  g_currentMission.player.rootNode
  g_currentMission.environment:addMinuteChangeListener(instance);
  g_currentMission.environment:removeMinuteChangeListener(self);
+ 
  g_currentMission.fieldDefinitionBase
+ g_currentMission.ploughChannel
+ g_currentMission.cultivatorChannel
+ g_currentMission.sowingChannel
+ g_currentMission.sowingWidthChannel
+ g_currentMission.sprayChannel
+ 
  g_currentMission:getIsServer()
  g_currentMission:getIsClient()
  (2 * math.pi) * (g_currentMission.environment.dayTime / (1000 * 60 * 60 * 12));
  (2 * math.pi) * (g_currentMission.environment.dayTime / (1000 * 60 * 60));
  g_currentMission.controlledVehicle 
  
-g_currentModDirectory
+g_currentMission.waterY
+g_currentMission:onSunkVehicle(self);
 
 g_screenAspectRatio
 g_inGameMenu
@@ -40,6 +60,11 @@ g_i18n
 g_screenWidth
 g_screenHeight
 g_languageShort
+
+g_woodCuttingMarkerEnabled
+
+
+g_currentMission.missionStats:updateStats("sprayUsage", usage);
 
 if g_currentMission.missionInfo.customEnvironment ~= nil then
     i18n = _G[g_currentMission.missionInfo.customEnvironment].g_i18n;
@@ -63,7 +88,14 @@ if g_currentMission.missionInfo.customEnvironment ~= nil then
  AnimalHusbandry.playerWrappers[connection];
  
  g_currentMission:getSiloAmount()
+ g_currentMission:getSiloAmount(FillType);
  g_currentMission:setSiloAmount()
+ g_currentMission:setSiloAmount(FillType, newFillLevel, 0));
+ 
+ g_multiSiloDialog:setFillTypes(self.fillTypes);
+ g_multiSiloDialog:setTitle(self.stationName);
+ g_multiSiloDialog:setSelectionCallback(self.onFillTypeSelection, self);
+ self.multiSiloDialog = g_gui:showGui("MultiSiloDialog");
  
  g_onCreateUtil.addOnCreateFunction("functionName", "ClassName".onCreate);
  g_onCreateUtil.addOnCreateFunction("sampleAA", sampleAA.onCreate);
@@ -73,14 +105,17 @@ if g_currentMission.missionInfo.customEnvironment ~= nil then
  g_mouseControlsHelp
  
  g_client
- 
+ g_isServerStreamingVersion
  g_isDemo
+ assert(g_currentMission:getIsServer());
  
    --table.insert(g_currentMission.updateables, helpIcons);
 g_currentMission.helpIconsBase = helpIcons;
 g_currentMission.missionStats.foundHelpIcons 
 messageNumber = helpIcon.helpIconCustomNumber;
 
+--local f = 20;
+--addForce(shape, yx*f,yy*f,yz*f, jx,jy+10,jz, false); (nice thing to know, hint: when player inrange addfroce)
 
  -- throw player out of field dialog if he's currently got it open
             if g_gui.currentGui ~= nil and g_gui.currentGuiName == "FieldDialog" and g_gui.currentGui.target.currentField == fieldDef then
@@ -102,3 +137,6 @@ if g_currentMission.controlPlayer then
     		playerPosition[1], playerPosition[2], playerPosition[3] = getWorldTranslation(g_currentMission.controlledVehicle.rootNode);
     	end;
 
+g_settingsRearMirrors
+g_rearMirrorsAvailable
+g_analogStickVTolerance
