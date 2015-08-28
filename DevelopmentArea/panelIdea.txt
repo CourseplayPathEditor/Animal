@@ -1,0 +1,24 @@
+the GUI/HUD/Panel how you want to call it wil be de guimanager for the mod.
+the design i was thinking about:
+we use a modern smartTv image (prototype made in photoshop)
+that tv will display the status information, let you change  mod settings
+
+we give the open/close panel key f12 or so
+
+the menu opens and we check for a first run event, if true, we let it open on the settings, so the user could define what he wants.
+once the user set his settings we say first run false. next time the panel must open the myapps panel where the user then push on buttons to go to the status or page he wants.
+
+what we incl as stats, everything from the animals, farmsilo's, player stats.
+what extra you thinking of? a medic to heal the sick animals, a buy/sell[animalType] function, ...
+
+work way:
+hit f12, panel opens, click on the animals button, list of installed types opens in a litle preview if posible otherwise in a new view
+again all animals shown as buttons to go further the path defined.
+in this process the end page will show totalnumanimals aswell as feeding, breed status loaded out the pool.
+
+we started a prototype + testscript but giants info is poor and we do not get the result we want.
+maby later we can experiment with the createVideoOverlay() to add some clips.
+
+we not going to use all status panels as we already have mods for that but maby integrate some or have our mod be integrated.
+
+first we need to be sure we have the correct info and the position.
