@@ -45,6 +45,8 @@ playSample(g_currentMission.cashRegistrySound, 1, 1, 0);
  
  g_currentMission:getIsServer()
  g_currentMission:getIsClient()
+ g_dedicatedServerInfo
+ 
  (2 * math.pi) * (g_currentMission.environment.dayTime / (1000 * 60 * 60 * 12));
  (2 * math.pi) * (g_currentMission.environment.dayTime / (1000 * 60 * 60));
  g_currentMission.controlledVehicle 
