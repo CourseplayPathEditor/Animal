@@ -294,9 +294,9 @@ function gAm:setName(gender)
 end;
 
 function gAm:setup()
-	gAm:SetCowPool();
-	gAm:SetSheepPool();
-	gAm:SetChickenPool();
+	--gAm:SetCowPool();
+	--gAm:SetSheepPool();
+	--gAm:SetChickenPool();
 	gAm:SetFarm();
 	gAm:SetGame();
 	
