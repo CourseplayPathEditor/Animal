@@ -3,11 +3,11 @@ local WriteMode = "w";
 local AppendMode = "a";
 local mode = WriteMode;
 
-local openFile = io.open();
-local writeFile = io.write();
-local flushFile = io.flush();
-local closeFile = io.close();
-local read = io.read("*all");
+local openFile = io.open;
+local writeFile = io.write;
+local flushFile = io.flush;
+local closeFile = io.close;
+local read = io.read; ---("*all");
 
 atype = "cow";
 
@@ -18,13 +18,13 @@ local file = openFile("fileName", "mode");
 -- mode: "w" = write mode (all file text is erased)
 -- mode: "a" = append mode (used for adding onto the end of the file)
 
---file:write("text") -- writeFile("text to write");
+--file:writeFile("text") -- writeFile("text to write");
 -- writes "text" to file
 
---file:flush()
+--file:flushFile()
 -- saves the file - file
 
---file:close()
+--file:closeFile()
 -- 'closes' and saves the file - file
 
 --file:read()
@@ -32,7 +32,7 @@ local file = openFile("fileName", "mode");
 
 --\n
 	-- represents a break (like pressing the enter key or return key)
-		o e.g. file:write("Hi\nHow are you?") will appear like so:
+		o e.g. file:writeFile("Hi\nHow are you?") will appear like so:
 			Hi
 			How are you?
 file:writeFile("This is a testFile to test writing a luascript\n",
